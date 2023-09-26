@@ -41,3 +41,52 @@ body {
   font-family: sans-serif;
   font-weight: 400;
 }
+
+html {
+  /* ! and now when we set the font-size for the root element <html> element now 1 rem = value of font-size
+  * in this case: 1 rem = 10px 
+  ! it is very useful, when we want design for the smaller screen we don't need go to per elements and change the length, instead we can change it in the root <html> element with set font-size smaller then entire layout will be change to smaller
+  * and we can use media queries to change the font-size
+  * and we should set it to 10px because it's easy to calculation
+  ? but now it's good yet because doing it like this will not respect the user's definition of the browser's font-size
+  * example the user want to change the default font-size from 16px to 20px to easy to look but now with this setup in here we always have font-size or root font-size 10px so the change is not happened
+  ! and it's huge problem if our users might the people who have less visible look
+  * and to avoid this problem we don't set the font-size to fixed value like this but instead to a percentage of the default font-size of the browser*/
+  /* font-size: 10px; 
+  * we need to convert 10px to percentage of the default browser font-size: 10/16 = 0.625 <=> 62.5%
+  * 62.5% is percentage of the user's browser setting
+  ? if user change the font-size to 18px, 20px... => 18 * 62.5%, 20 * 62.5%... n * 62.5%
+  * and now with this way we did actually respect the user's font-size
+  ! when user change the font size it also change layout but this way it'll consistent and all layout not break and still good the change is only the size
+  * if you use browser to visit the website when we increase the font-size all page also increase right 
+  * SINCE HERE WE ALWAYS USE REM UNIT NOT USE PIXEL UNIT AND USE THE TRICK 1 REM = 10PX CUZ IT'S VERY TO EASY CALCULATE */
+  font-size: 62.5%;
+}
+
+/* * HOW REM UNIT AND MAX-WIDTH PROPERTY WORK */
+.test {
+  /* width: 900px; */
+  /* * so now when we shrink the tab this width of test not shrink right 
+  * but now we want it shrink when the viewport smaller, so basically when the width not fit with the width 900px here then the element should simply have the width of the parent container
+  * and that's what we can use the max-width property for
+  * and this max-width property will do this element is flexible, cuz now it can be adapt viewport width
+  ? so why in this case we don't use %, it's also adapt with viewport?
+   * because now we want the with exactly 900px when the width really 900px so if we use % it's not correct right
+   * if the container width greater than the element width then the element width will equal exactly max-width value, if the container width less than the max-width now the element width equal the container width*/
+  /* max-width: 900px; */
+
+  /* * WHAT'S REM UNIT?
+  * rem is the root element's font-size, so the root of the document is the <html> element
+  * if we don't specify the font-size of the root element <html> element then one rem is simply equal to the default browser font-size which is 16px unless the user doesn't change it 
+  ! Default 1 rem = 16px again because we don't specify font-size on the <html> element so it still 16px
+  => 300 rem now = 30*16 = 480px right*/
+  max-width: 30rem;
+  /* * and we can see the length in our design based our font-size because it can set the value of rem right and it's quite strange but it's exactly the strength of rem unit
+  * because  then when we can simply change the font-size on the HTML element and that will then automatically change all the length that are define anywhere in our css with the rem unit */
+  height: 10rem;
+  font-size: 2rem;
+  /* * and now if we set the font-size for <html> element and it's also the values of rem unit so all length property we defined here will change 
+  ! before can be displayed on the page all the relative units such as percent, rem... need to be convert back to pixels unit(px)
+  * that's mean when we change the font-size of the root element(rem unit) entire layout also change*/
+  background-color: aquamarine;
+}
