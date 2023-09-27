@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/hero-section.css" />
+    <title>Hero Section</title>
+  </head>
+  <body>
+    <!-- ! We should named section class is: section-name because we have many section with the part of the page right, not like <article> which have more semantic usually block so we can do not specify name for it   
+      ! div: is no semantic box so we should always named classes if we want select them-->
+    <!-- <section class="hero"> 
+      * now we can choose this section-hero is container but if we do it we cant create fixed sized container like we want to
+       * Therefore we will create new container element -->
+    <section class="section-hero">
+      <!-- <div class="hero-description"> -->
+      <div class="hero">
+        <div class="hero-text-box">
+          <!-- <h1 class="hero-headline">
+          ! we should name this heading is heading-primary cuz it's <h1> element and then we can have classes secondary-heading<h2>, tertiary-heading<h3>
+          ! we should use classes selector not use id and element selector cuz it'll create the consistence for our CSS code -->
+          <h1 class="heading-primary">
+            A healthy meal delivered to your door, every single day
+          </h1>
+          <!-- <p class="hero-content"> -->
+          <p class="hero-description">
+            The smart 365-days-per-year food subscription that will make you eat
+            healthy again. Tailored to your personal tastes and nutritional
+            needs.
+          </p>
+          <!-- <button class="hero-btn">Start</button>
+        <button class="hero-btn hero-btn--highlight">Start</button> 
+      ! we should use anchor(link) element here cuz link element to link somewhere in current page, other page, outside website page
+      !while button is only use for actions, usually something happen not related to  navigation
+     * and the content in this a element is small text usually called MICRO COPY and we need to think about this small content when we design
+    * now this button here is main call to action button of this page, and it's basically the action which we want the user do  when go to website
+    * so in this case we want user subscribe to Onifood subscription right therefore we should write something related to that like: Subscribe now
+     ! but since the goal of company is also want the user eat the heathy food so we can write: Start eating well, because it's little bit rude if we call signup, subscribe now in the first time right-->
+          <!-- <a href="" class="hero-link"></a> 
+        ! we should named this link is btn it's basically a link but also fake button right, class btn because we have some button in website so we can reuse and if the button have special or some thing different we only add the second class(modified class) btn--highlight, btn--full(cuz it's full color, btn--cta(call to action))
+      * another button we can create the modified class and called btn-outline-->
+          <a class="btn btn--full margin-right-sm" href="#"
+            >Start eating well</a
+          >
+          <!-- * the second button is basically the secondary button and usually it's related to our info website like about us, read more, learn more... 
+          -->
+          <a class="btn btn--outline" href="#">Learn more &rarr;</a>
+          <div class="delivered-meals">
+            <div class="delivered-imgs">
+              <img
+                class="customer-img"
+                src="content/img/customers/customer-1.jpg"
+                alt=""
+              />
+              <img
+                class="customer-img"
+                src="content/img/customers/customer-2.jpg"
+                alt=""
+              />
+              <img
+                class="customer-img"
+                src="content/img/customers/customer-3.jpg"
+                alt=""
+              />
+              <img
+                class="customer-img"
+                src="content/img/customers/customer-4.jpg"
+                alt=""
+              />
+              <img
+                class="customer-img"
+                src="content/img/customers/customer-5.jpg"
+                alt=""
+              />
+              <img
+                class="customer-img"
+                src="content/img/customers/customer-6.jpg"
+                alt=""
+              />
+            </div>
+            <p class="delivered-text">
+              <span>250,000+</span> meals delivered last year!
+            </p>
+            <!-- <div class="customer-logos">
+              <img
+                class="customer-logo"
+                src="content/img/logos/business-insider.png"
+                alt=""
+              />
+              <img
+                class="customer-logo"
+                src="content/img/logos/forbes.png"
+                alt=""
+              />
+              <img
+                class="customer-logo"
+                src="content/img/logos/techcrunch.png"
+                alt=""
+              />
+              <img
+                class="customer-logo"
+                src="content/img/logos/usa-today.png"
+                alt=""
+              />
+              <img
+                class="customer-logo"
+                src="content/img/logos/the-new-york-times.png"
+                alt=""
+              />
+            </div> -->
+          </div>
+        </div>
+        <div class="hero-img-box">
+          <img class="hero-img" src="content/img/hero.png" alt="Hero image" />
+        </div>
+      </div>
+    </section>
+  </body>
+</html>
