@@ -156,6 +156,28 @@
           </div>
         </div>
       </section>
+      <!-- * we will build the Grid layout can be use over over again  
+       * section-how is stand for how it works section
+      * we can export many reuse classes and use on the element many time without repeat code
+      * in this case we say: section is container is grid with 2 columns -->
+      <section class="section-how">
+        <!-- !However we want the section have background color but in this case  section-how container grid grid--2-cols it's also become container element so background color only work in this container
+        * so what we do now like the hero section which we created hero container so now we will create new <div> container-->
+        <div class="container grid grid--2-cols">
+          <div>Test 1</div>
+          <div>Test 2</div>
+          <div>Test 3</div>
+          <div>Test 4</div>
+        </div>
+      </section>
+      <section class="section-how">
+        <div class="container grid grid--3-cols">
+          <div>Test 1</div>
+          <div>Test 2</div>
+          <div>Test 3</div>
+          <div>Test 4</div>
+        </div>
+      </section>
     </main>
   </body>
 </html>

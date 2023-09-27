@@ -31,6 +31,7 @@ Default: 3px(0.3rem)
   = 01: usually we will set dimension for height cuz it's easy to control
   = 02: with the small value and we don't to change when scale layout we can use px instead use rem unit like border-radius: this value here might not change anymore
   = 03: keep add the new values to system size above because then when our CSS file grown we can easy to know all the values we use and create consistent
+  !we should put grid, container reuse classes on top GENERAL STYLE cuz it might use the most on our page
     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
 * {
@@ -59,6 +60,44 @@ body {
   **************** GENERAL REUSE COMPONENTS****************
   * General reuse: basically is generic selector classes
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+/* ! we should put grid, container reuse classes on top cuz it might use the most on our page */
+/* ? CONTAINER CENTER REUSE CLASS */
+.container {
+  /* * max-width to do it nice and fluid 
+  * 120rem is 1200px which the value we might reuse in this project
+  another value can be use: 1140px
+  * with this we will put all content to container with 1200px width */
+  max-width: 120rem;
+  /* * margin: auto value will figure out the same value of left and right side to container(in this case is viewport) and so it's do this container look like center right */
+  margin: 0 auto;
+  padding: 0 4.8rem;
+  /* padding-right: 4.8rem;
+  padding-left: 4.8rem; */
+  /* * we can set the padding to create space on right and left side cuz we don't want the content don't stick to left and right side, why don't we do padding for top and bottom?
+  * because the space between sections can be different right, and so we don't do it */
+}
+
+/* ? GRID REUSE CLASS 2x2 */
+.grid {
+  display: grid;
+  gap: 9.6rem;
+  /* grid-template-columns: 1fr 1fr; 
+  ! we can use repeat() function as well */
+  /* grid-template-columns: repeat(2, 1fr); */
+}
+/* ! but now this is not really is reuse class, so if we have the section design with 3 columns so it can't be apply 
+* we will create the second class is called grid--3-cols
+* cols stand for columns
+* With technique we can export different styles with different classes to make them can be reusable across our page*/
+
+.grid--2-cols {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3-cols {
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .heading-primary {
   /* * we should use the rem property everywhere in website */
   font-size: 5.2rem;
@@ -218,6 +257,8 @@ body {
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
   **************** HERO SECTION*****************
+  *Usually we have hero section with special because it’s hero section which very close with the top page and contain important content we want user pay attention for it right 
+  ! so it might not can be change so we might not use the reuse classes 
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 /* .hero{} */
 .section-hero {
@@ -256,7 +297,7 @@ body {
   /* width: 120rem; */
   /* ! again remember that if we use width property when the we pull and smaller the tab size and it's smaller than  so the width property will not change right, but what we want here the width of this element must to adapt the viewport smaller
   * so therefore we will use: max-width property  */
-  max-width: 120rem;
+  max-width: 130rem;
   margin: 0 auto;
   /* background-color: #e67e22; */
   margin-bottom: 4.8rem;
@@ -365,4 +406,38 @@ body {
 .customer-logo {
   width: 9rem;
   height: auto;
+}
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+  **************** HOW IT WORKS SECTION*****************
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+.section-how {
+  padding: 9.6rem 0;
+  font-size: 5rem;
+  /* * so now if we want the elements must to put 2x2 range we need set it to grid right and go to this section-how selector set but it's not good practice
+  ! because maybe after that we need to writ more code repeat over over again when we want element to grid element right
+  * so therefore instead go to per element and set it to grid we can create the reuse GRID class */
+  /* display: grid;
+  grid-template-columns: 1fr 1fr; */
+  background-color: orangered;
+}
+
+.section-how div {
+  padding: 4.8rem;
+}
+
+.container div:nth-child(1) {
+  background-color: aqua;
+}
+
+.container div:nth-child(2) {
+  background-color: aquamarine;
+}
+
+.container div:nth-child(3) {
+  background-color: yellow;
+}
+
+.container div:nth-child(4) {
+  background-color: orange;
 }
