@@ -13,28 +13,63 @@
     <title>Hero Section</title>
   </head>
   <body>
-    <!-- ! We should named section class is: section-name because we have many section with the part of the page right, not like <article> which have more semantic usually block so we can do not specify name for it   
+    <!-- *Header 
+    ! we should always named classes selector for all elements but except in case this element don't have any child element so we can use descendant selector cuz named classes in this case not make sense
+    ! <header> element can be use for start the page, or for header of certain components, sections-->
+    <header class="header">
+      <!-- <div class="logo"> -->
+      <img
+        class="logo"
+        src="content/img/omnifood-logo.png"
+        alt="Onifood logo"
+      />
+      <!-- </div> -->
+      <!-- !<nav> element is used for major navigation blocks that we have on our page so not all collections of links need to wrapped elements
+        * we should named for it: main-nav class cuz in some part of website like footer is also have nav element to navigation related parts right-->
+      <!-- <nav class="navigation"> -->
+      <nav class="main-nav">
+        <!-- * Usually we add a bunch of anchor element inside <nav> element but it's not best semantic way because navigation should be a list of links grouped together
+          * what we do here is create unordered list and inside that list we will add all the links: main-nav-list and it's many developers used -->
+        <ul class="main-nav-list">
+          <li><a class="main-nav-link" href="#">Home</a></li>
+          <li><a class="main-nav-link" href="#">Shop</a></li>
+          <li><a class="main-nav-link" href="#">Contact</a></li>
+          <!-- ! usually in navigation like this we usually have  a call to action as the very last item in the navigation
+          * something like call to action on hero section start eating well button remember that
+          * and two this call to action buttons will lead in the same places -->
+          <li>
+            <a class="main-nav-link nav-cta" href="#">Start eating well</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- * So let wrap these content inside <main> element: is HTML5 element which means basically that it contains the main content or main area of certain webpage so of a certain web document
+      * now what it does not include is content that is repeated across multiple pages like <header>, <footer>, sidebar, <aside> related info...
+      * so if we have multiple page we can use in the same header, footer, sidebar, aside... or other content which not change so these parts are not a part of the <main> element 
+      ! and we even might not styling <main> element, just for readers and search engine know that well this is exactly this is the main part of our page -->
+    <main>
+      <!-- ! We should named section class is: section-name because we have many section with the part of the page right, not like <article> which have more semantic usually block so we can do not specify name for it   
       ! div: is no semantic box so we should always named classes if we want select them-->
-    <!-- <section class="hero"> 
+      <!-- <section class="hero"> 
       * now we can choose this section-hero is container but if we do it we cant create fixed sized container like we want to
        * Therefore we will create new container element -->
-    <section class="section-hero">
-      <!-- <div class="hero-description"> -->
-      <div class="hero">
-        <div class="hero-text-box">
-          <!-- <h1 class="hero-headline">
+      <section class="section-hero">
+        <!-- <div class="hero-description"> -->
+        <div class="hero">
+          <div class="hero-text-box">
+            <!-- <h1 class="hero-headline">
           ! we should name this heading is heading-primary cuz it's <h1> element and then we can have classes secondary-heading<h2>, tertiary-heading<h3>
           ! we should use classes selector not use id and element selector cuz it'll create the consistence for our CSS code -->
-          <h1 class="heading-primary">
-            A healthy meal delivered to your door, every single day
-          </h1>
-          <!-- <p class="hero-content"> -->
-          <p class="hero-description">
-            The smart 365-days-per-year food subscription that will make you eat
-            healthy again. Tailored to your personal tastes and nutritional
-            needs.
-          </p>
-          <!-- <button class="hero-btn">Start</button>
+            <h1 class="heading-primary">
+              A healthy meal delivered to your door, every single day
+            </h1>
+            <!-- <p class="hero-content"> -->
+            <p class="hero-description">
+              The smart 365-days-per-year food subscription that will make you
+              eat healthy again. Tailored to your personal tastes and
+              nutritional needs.
+            </p>
+            <!-- <button class="hero-btn">Start</button>
         <button class="hero-btn hero-btn--highlight">Start</button> 
       ! we should use anchor(link) element here cuz link element to link somewhere in current page, other page, outside website page
       !while button is only use for actions, usually something happen not related to  navigation
@@ -42,52 +77,52 @@
     * now this button here is main call to action button of this page, and it's basically the action which we want the user do  when go to website
     * so in this case we want user subscribe to Onifood subscription right therefore we should write something related to that like: Subscribe now
      ! but since the goal of company is also want the user eat the heathy food so we can write: Start eating well, because it's little bit rude if we call signup, subscribe now in the first time right-->
-          <!-- <a href="" class="hero-link"></a> 
+            <!-- <a href="" class="hero-link"></a> 
         ! we should named this link is btn it's basically a link but also fake button right, class btn because we have some button in website so we can reuse and if the button have special or some thing different we only add the second class(modified class) btn--highlight, btn--full(cuz it's full color, btn--cta(call to action))
       * another button we can create the modified class and called btn-outline-->
-          <a class="btn btn--full margin-right-sm" href="#"
-            >Start eating well</a
-          >
-          <!-- * the second button is basically the secondary button and usually it's related to our info website like about us, read more, learn more... 
+            <a class="btn btn--full margin-right-sm" href="#"
+              >Start eating well</a
+            >
+            <!-- * the second button is basically the secondary button and usually it's related to our info website like about us, read more, learn more... 
           -->
-          <a class="btn btn--outline" href="#">Learn more &rarr;</a>
-          <div class="delivered-meals">
-            <div class="delivered-imgs">
-              <img
-                class="customer-img"
-                src="content/img/customers/customer-1.jpg"
-                alt=""
-              />
-              <img
-                class="customer-img"
-                src="content/img/customers/customer-2.jpg"
-                alt=""
-              />
-              <img
-                class="customer-img"
-                src="content/img/customers/customer-3.jpg"
-                alt=""
-              />
-              <img
-                class="customer-img"
-                src="content/img/customers/customer-4.jpg"
-                alt=""
-              />
-              <img
-                class="customer-img"
-                src="content/img/customers/customer-5.jpg"
-                alt=""
-              />
-              <img
-                class="customer-img"
-                src="content/img/customers/customer-6.jpg"
-                alt=""
-              />
-            </div>
-            <p class="delivered-text">
-              <span>250,000+</span> meals delivered last year!
-            </p>
-            <!-- <div class="customer-logos">
+            <a class="btn btn--outline" href="#">Learn more &rarr;</a>
+            <div class="delivered-meals">
+              <div class="delivered-imgs">
+                <img
+                  class="customer-img"
+                  src="content/img/customers/customer-1.jpg"
+                  alt=""
+                />
+                <img
+                  class="customer-img"
+                  src="content/img/customers/customer-2.jpg"
+                  alt=""
+                />
+                <img
+                  class="customer-img"
+                  src="content/img/customers/customer-3.jpg"
+                  alt=""
+                />
+                <img
+                  class="customer-img"
+                  src="content/img/customers/customer-4.jpg"
+                  alt=""
+                />
+                <img
+                  class="customer-img"
+                  src="content/img/customers/customer-5.jpg"
+                  alt=""
+                />
+                <img
+                  class="customer-img"
+                  src="content/img/customers/customer-6.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="delivered-text">
+                <span>250,000+</span> meals delivered last year!
+              </p>
+              <!-- <div class="customer-logos">
               <img
                 class="customer-logo"
                 src="content/img/logos/business-insider.png"
@@ -114,12 +149,13 @@
                 alt=""
               />
             </div> -->
+            </div>
+          </div>
+          <div class="hero-img-box">
+            <img class="hero-img" src="content/img/hero.png" alt="Hero image" />
           </div>
         </div>
-        <div class="hero-img-box">
-          <img class="hero-img" src="content/img/hero.png" alt="Hero image" />
-        </div>
-      </div>
-    </section>
+      </section>
+    </main>
   </body>
 </html>

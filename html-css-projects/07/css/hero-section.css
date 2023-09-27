@@ -1,15 +1,17 @@
 /* *-------------01 TYPOGRAPHY - FONT-SIZE SYSTEM----------------------------
 10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
+paragraph: default 20
 *---------------------------------------------------------------------------/
 *-------------02 SPACE - WHITESPACE SYSTEM----------------------------
 2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
 *-------------03 FONT-WEIGHT----------------------------
 Default: 400
-400 / 500 / 600 / 700
+ 500(medium) / 600(semi-bold) / 700(bold)
 *---------------------------------------------------------------------------/
 *-------------04 LINE-HEIGHT----------------------------
 Default: 1
 1.1 / 1.2 / 1.3 / 1.4 / 1.5 / 1.6 / 1.7 / 1.8 / 1.9
+paragraph: default 1.6
 *---------------------------------------------------------------------------/
 *-------------05 COLORS----------------------------
 Primary: #e67e22
@@ -17,48 +19,18 @@ Tints: #fae5d3,
 Shades:#cf711f
 Accent:
 Greys: #343a40, #212529
+
+*-------------07 BORDER RADIUS---------------------------
+Default: 3px(0.3rem)
+*---------------------------------------------------------------------------/
 */
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
          ******* NOTE ********
- = 1: When we create visual hierarchy between text we should choose the typography before
- = 2: use display property on the top in selector style: selector{ display: value; ... }
- = 3: perform create class with common properties to reuse, then create the other class(modified class) with different properties and add to necessary element usually we use: nameSelector--nameModified
- = 4: when we add the border like this when we hover border is created the outside space right therefore it'll change the dimension of the content, container... so it's not what we want
-  >>> we will use nice trick: ADD BORDER INSIDE ELEMENT WITH BOX-SHADOW PROPERTY 
-  >>> box-shadow: inset 0 0 0 3px #fff;
-  ! inset keyword
-  >>>the inset keyword: means add shadow inside element, of course this keyword not work with border otherwise we did it, right therefore we used shadow for this
-  >>> with this value set for box-shadow it'll scale 3px with color #fff 
- 
-  = 5: *transition property: allows us to do just what it says so to transition between two values using animation
-    >>> transition: we can have multiple values but at least we need two things to it works
-    >>> we need property which we want to animate
-    >>> we need to say how much the animation happen
-    >>> in this case we need background and color are animate: so we can use all keyword(all properties will be animate, and in this case we only background-color property change so we use background-color
-    >>> time have two unit: s, ms(1s = 1000ms)
-    ! animation means basically what we mean is to change the value of a certain or multiple properties from one to another one
-    ! remember we only put this transition property on the original state in this case before we hover
-  = 6 now one thing to do is space between two these button elements 
-    >>> so we can add margin-right to this button but it's not best way
-    >>> and we also need to reuse this class btn--full right so we don't do that
-    >>> so we can add another container and use flexbox or CSS grid but which only two elements and it's also not best choose
-    >>> and we will add the modified class and in this case it's helper class: margin-right-sm which we will reuse
-    >>>.margin-right-sm {
-    so now it works and very easy to achieve 
-    margin-right: 2.4rem;
-    }
-  = 7 when we create helper classes we really want to apply this style
-    >>> we can use important keyword to ensure that happen cuz it'll do this style is highest priority right
-    >>>.margin-right-sm {
-    so now it works and very easy to achieve 
-    margin-right: 2.4rem !important;
-    }
-    ! with experience we will know when we should use helper classes and usually it related to margin which we want reuse in multiple places but we do not want to add to specific elements because then when we want to reuse them somewhere else it might create some conflict
-  = 8 with the typeface we need experiment many time till end project we also test typeface tp watch the  change of layout and choose the best fit typeface
-  = 9 we use flex when we don't care about the size of the columns, we simply let the content decided the size 
-  = 10 notice when we use the text color and the background color are in the same with the root color we should test the contrast between two color use coloors tool
-   in here we have color and background-color are from the #e67e22 color right so we need to test the colors contrast  
+  !We should divide the structure of our files: GENERAL REUSE COMPONENT, HEADER, SECTIONS, FOOTER....
+  = 01: usually we will set dimension for height cuz it's easy to control
+  = 02: with the small value and we don't to change when scale layout we can use px instead use rem unit like border-radius: this value here might not change anymore
+  = 03: keep add the new values to system size above because then when our CSS file grown we can easy to know all the values we use and create consistent
     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
 * {
@@ -82,52 +54,11 @@ body {
   font-family: "Rubik", sans-serif;
   color: #343a40;
 }
-/* .hero{} */
-.section-hero {
-  background-color: #fae5d3;
-  /* * we also want some big space between top and bottom cuz remember that the image is fulfill the hero container and this space is also space between section
-  * we want space inside so we use padding
-  ! if we use margin we will create space outside hero section create whitespace */
-  padding: 9.6rem;
-}
-
-.hero {
-  /* * remember in startup we also have some section have grey background color but because this website is combine between startup and calm personality so we can add the very light background color, very light of the primary color */
-  /* background-color: #fae5d3;
-  ! but we want this background-color entire section hero not only hero, if we do it it look strange because only hero container is color
-  * this is also another reason why we should create hero container in hero section  */
-
-  /* display: flex; */
-  /* ? now we want the text-box and image is side by side 
-  *so we can use flexbox and CSS grid 
-  !but we should use CSS grid to easy to edit the columns and we can use the same tool(CSS grid) for layout so it's create consistent */
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  /* column-gap: 64px; */
-  /* * we also need space between element in hero so we also use 9.6em to create consistent */
-  gap: 9.6em;
-  align-items: center;
-  margin-top: 60px;
-
-  /* !SO NOW THE REASON WE CREATE NEW CONTAINER HERO IS CREATE FIXED WIDTH container */
-  /* width: 900px; */
-  /* * but remember that we should use rem unit instead use pixel unit, and it's also the ingredient in responsive web design right
-  * but before that we should custom this rem unit */
-  /* width: 120rem; */
-  /* ! again remember that if we use width property when the we pull and smaller the tab size and it's smaller than  so the width property will not change right, but what we want here the width of this element must to adapt the viewport smaller
-  * so therefore we will use: max-width property  */
-  max-width: 120rem;
-  margin: 0 auto;
-  /* background-color: #e67e22; */
-  margin-bottom: 4.8rem;
-}
-/* .hero-description {
-} */
-
-.hero-text-box {
-}
-
-/* .hero-headline { */
+/* !We should divide the structure of our files: GENERAL COMPONENT, HEADER, SECTIONS, FOOTER.... */
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+  **************** GENERAL REUSE COMPONENTS****************
+  * General reuse: basically is generic selector classes
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .heading-primary {
   /* * we should use the rem property everywhere in website */
   font-size: 5.2rem;
@@ -139,38 +70,6 @@ body {
   margin-bottom: 3.2rem;
 }
 
-/* .hero-content { */
-.hero-description {
-  /* * this description is describe the headline right so two this is related so the space of between them is smaller than space between buttons */
-  font-size: 2rem;
-  line-height: 1.6;
-  margin-bottom: 4.8rem;
-}
-
-.hero-img-box {
-}
-.hero-img {
-  /* width: 400px;
-  * we want this image is flexible image so we need set for it with max-width property 
-  ! but now we don't need the width fixed for this image because it's based on the container element so therefore we will use %
-  * and flexible is one of ingredients of web design right and we also working with this technique*/
-  /* max-width: 400px; */
-  width: 100%;
-}
-
-/* .hero-btn {
-  cursor: pointer;
-  border: 0;
-  background-color: #fff;
-  padding: 16px 48px;
-  margin-left: 32px;
-   border-radius: 3px; 
-  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
-  font-weight: bold;
-} */
-
-/* .hero-link:link,
-.hero-link:visited { */
 .btn:link,
 .btn:visited {
   text-decoration: none;
@@ -246,6 +145,162 @@ body {
 .margin-bottom-sm {
   margin-bottom: 3.2rem;
 }
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+  **************** HEADER*****************
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fae5d3;
+  /* * so we will add the fixed height for this header
+     ? why do we do that? usually we allow the content to define the height and then adding some padding right
+     * the reason for that we actually want this navigation sticky a bit later, so sticky meaning that as we scroll down page it should stay at the same position and for this to work it's easier when the height is actually fixed
+     * of course can use padding but this way is easier and better 
+      padding: 2.4rem 4.8rem;*/
+  height: 9.6rem;
+  padding: 0 4.8rem;
+}
+
+.logo {
+  /* * usually we will set dimension for height cuz it's easy to control
+  * in this case if we use width => width: 12.8rem so it's big right but with height it's 2.4rem */
+  height: 2.4rem;
+}
+/* .header-logo {
+} */
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+  **************** NAVIGATION*****************
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.main-nav {
+}
+
+.main-nav-list {
+  display: flex;
+  gap: 2.4rem;
+  list-style: none;
+}
+
+.main-nav-link:link,
+.main-nav-link:visited {
+  text-decoration: none;
+  color: #343a40;
+  font-weight: 5000;
+  transition: all 0.5s;
+  /* * we don't use 2rem because it's for paragraph, we can down this value to 1.8rem */
+  font-size: 1.8rem;
+}
+
+.main-nav-link:hover,
+.main-nav-link:active {
+  color: #cf711f;
+  /* text-decoration: underline; */
+  /* background-color: #fae5d3; */
+}
+
+/* * we want this class always apply for this main-nav-link so we can use the end selector, or even we can use !important keyword but it's the last case we use
+! and notice that we don't to add the transition property why? because we had it in .main-nav-link selector right we don't do it */
+.main-nav-link.nav-cta:link,
+.main-nav-link.nav-cta:visited {
+  background-color: #e67e22;
+  color: #fff;
+  padding: 1.2rem 2.4rem;
+  border-radius: 0.3rem;
+}
+
+.main-nav-link.nav-cta:hover,
+.main-nav-link.nav-cta:active {
+  background-color: #cf711f;
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+  **************** HERO SECTION*****************
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+/* .hero{} */
+.section-hero {
+  background-color: #fae5d3;
+  /* * we also want some big space between top and bottom cuz remember that the image is fulfill the hero container and this space is also space between section
+  * we want space inside so we use padding
+  ! if we use margin we will create space outside hero section create whitespace */
+  padding: 4.8rem 0 9.6rem 0;
+}
+
+.hero {
+  /* * Now we can add some padding to do the content have space when the viewport is smaller */
+  padding: 0 4.8rem;
+
+  /* * remember in startup we also have some section have grey background color but because this website is combine between startup and calm personality so we can add the very light background color, very light of the primary color */
+  /* background-color: #fae5d3;
+  ! but we want this background-color entire section hero not only hero, if we do it it look strange because only hero container is color
+  * this is also another reason why we should create hero container in hero section  */
+
+  /* display: flex; */
+  /* ? now we want the text-box and image is side by side 
+  *so we can use flexbox and CSS grid 
+  !but we should use CSS grid to easy to edit the columns and we can use the same tool(CSS grid) for layout so it's create consistent */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  /* column-gap: 64px; */
+  /* * we also need space between element in hero so we also use 9.6em to create consistent */
+  gap: 9.6em;
+  align-items: center;
+  margin-top: 60px;
+
+  /* !SO NOW THE REASON WE CREATE NEW CONTAINER HERO IS CREATE FIXED WIDTH container */
+  /* width: 900px; */
+  /* * but remember that we should use rem unit instead use pixel unit, and it's also the ingredient in responsive web design right
+  * but before that we should custom this rem unit */
+  /* width: 120rem; */
+  /* ! again remember that if we use width property when the we pull and smaller the tab size and it's smaller than  so the width property will not change right, but what we want here the width of this element must to adapt the viewport smaller
+  * so therefore we will use: max-width property  */
+  max-width: 120rem;
+  margin: 0 auto;
+  /* background-color: #e67e22; */
+  margin-bottom: 4.8rem;
+}
+/* .hero-description {
+} */
+
+.hero-text-box {
+}
+
+/* .hero-headline { */
+
+/* .hero-content { */
+.hero-description {
+  /* * this description is describe the headline right so two this is related so the space of between them is smaller than space between buttons */
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 4.8rem;
+}
+
+.hero-img-box {
+}
+.hero-img {
+  /* width: 400px;
+  * we want this image is flexible image so we need set for it with max-width property 
+  ! but now we don't need the width fixed for this image because it's based on the container element so therefore we will use %
+  * and flexible is one of ingredients of web design right and we also working with this technique*/
+  /* max-width: 400px; */
+  width: 100%;
+}
+
+/* .hero-btn {
+  cursor: pointer;
+  border: 0;
+  background-color: #fff;
+  padding: 16px 48px;
+  margin-left: 32px;
+   border-radius: 3px; 
+  box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1);
+  font-weight: bold;
+} */
+
+/* .hero-link:link,
+.hero-link:visited { */
 
 /* .features-in { */
 .delivered-meals {
