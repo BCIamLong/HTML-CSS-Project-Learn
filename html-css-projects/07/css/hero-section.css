@@ -1,30 +1,3 @@
-/* *-------------01 TYPOGRAPHY - FONT-SIZE SYSTEM----------------------------
-10 / 12 / 14 / 16 / 18 / 20 / 24 / 30 / 36 / 44 / 52 / 62 / 74 / 86 / 98
-paragraph: default 20
-*---------------------------------------------------------------------------/
-*-------------02 SPACE - WHITESPACE SYSTEM----------------------------
-2 / 4 / 8 / 12 / 16 / 24 / 32 / 48 / 64 / 80 / 96 / 128 
-*-------------03 FONT-WEIGHT----------------------------
-Default: 400
- 500(medium) / 600(semi-bold) / 700(bold)
-*---------------------------------------------------------------------------/
-*-------------04 LINE-HEIGHT----------------------------
-Default: 1
-1.1 / 1.2 / 1.3 / 1.4 / 1.5 / 1.6 / 1.7 / 1.8 / 1.9
-paragraph: default 1.6
-*---------------------------------------------------------------------------/
-*-------------05 COLORS----------------------------
-Primary: #e67e22
-Tints: #fae5d3, 
-Shades:#cf711f
-Accent:
-Greys: #343a40, #212529
-
-*-------------07 BORDER RADIUS---------------------------
-Default: 3px(0.3rem)
-*---------------------------------------------------------------------------/
-*/
-
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
          ******* NOTE ********
   !We should divide the structure of our files: GENERAL REUSE COMPONENT, HEADER, SECTIONS, FOOTER....
@@ -32,159 +5,10 @@ Default: 3px(0.3rem)
   = 02: with the small value and we don't to change when scale layout we can use px instead use rem unit like border-radius: this value here might not change anymore
   = 03: keep add the new values to system size above because then when our CSS file grown we can easy to know all the values we use and create consistent
   !we should put grid, container reuse classes on top GENERAL STYLE cuz it might use the most on our page
+  = 04  padding-bottom: 70%;
+    ! remember that's in here 70% is the 70% of width parent element not height(only height property is % of height parent element)
+    ! and it's even true despite you manipulate with padding-bottom 
     <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-}
-
-html {
-  /* * Format rem unit: 62.5% = 10px/16px (16px is default and we want 1 rem = 10px to easy to calc) */
-  font-size: 62.5%;
-}
-
-body {
-  line-height: 1;
-  font-weight: 400;
-  /* * now we need to choose the typeface: inter is perfect for startup but now we also want mix with calm personality so we need the quite round typeface
-  * so in this case we do not choose inter 
-  ! with the typeface we need experiment many time till end project we also test typeface tp watch the change of layout and choose the best fit typeface*/
-  /* font-family: "Inter", sans-serif; */
-  font-family: "Rubik", sans-serif;
-  color: #343a40;
-}
-/* !We should divide the structure of our files: GENERAL COMPONENT, HEADER, SECTIONS, FOOTER.... */
-/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
-  **************** GENERAL REUSE COMPONENTS****************
-  * General reuse: basically is generic selector classes
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
-/* ! we should put grid, container reuse classes on top cuz it might use the most on our page */
-/* ? CONTAINER CENTER REUSE CLASS */
-.container {
-  /* * max-width to do it nice and fluid 
-  * 120rem is 1200px which the value we might reuse in this project
-  another value can be use: 1140px
-  * with this we will put all content to container with 1200px width */
-  max-width: 120rem;
-  /* * margin: auto value will figure out the same value of left and right side to container(in this case is viewport) and so it's do this container look like center right */
-  margin: 0 auto;
-  padding: 0 4.8rem;
-  /* padding-right: 4.8rem;
-  padding-left: 4.8rem; */
-  /* * we can set the padding to create space on right and left side cuz we don't want the content don't stick to left and right side, why don't we do padding for top and bottom?
-  * because the space between sections can be different right, and so we don't do it */
-}
-
-/* ? GRID REUSE CLASS 2x2 */
-.grid {
-  display: grid;
-  gap: 9.6rem;
-  /* grid-template-columns: 1fr 1fr; 
-  ! we can use repeat() function as well */
-  /* grid-template-columns: repeat(2, 1fr); */
-}
-/* ! but now this is not really is reuse class, so if we have the section design with 3 columns so it can't be apply 
-* we will create the second class is called grid--3-cols
-* cols stand for columns
-* With technique we can export different styles with different classes to make them can be reusable across our page*/
-
-.grid--2-cols {
-  grid-template-columns: repeat(2, 1fr);
-}
-
-.grid--3-cols {
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.heading-primary {
-  /* * we should use the rem property everywhere in website */
-  font-size: 5.2rem;
-  font-weight: 700;
-  /* * we can also use px unit cuz this value is very small */
-  letter-spacing: -0.1rem;
-  color: #212529;
-  /* margin-bottom: 32px; */
-  margin-bottom: 3.2rem;
-}
-
-.btn:link,
-.btn:visited {
-  text-decoration: none;
-  border-radius: 0.3rem;
-  color: #343a40;
-  display: inline-block;
-  padding: 1.6rem 3.2rem;
-  font-size: 2rem;
-  font-weight: 600;
-  /* margin-left: 24px; */
-  /* box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1); */
-  /* *transition property: allows us to do just what it says so to transition between two values using animation
-  * transition: we can have multiple values but at least we need two things to it works
-  *  =we need property which we want to animate
-  *  =we need to say how much the animation happen
-  * in this case we need background and color are animate: so we can use all keyword(all properties will be animate, and in this case we only background-color property change so we use background-color
-  * time have two unit: s, ms(1s = 1000ms)
-   ! animation means basically what we mean is to change the value of a certain or multiple properties from one to another one
-   * in this case from  background-color: #e67e22; to background-color: #cf711f;
-   ! remember we only put this transition property on the original state in this case before we hover
-   */
-  /* transition: all 0.5s; */
-  transition: background-color 0.5s;
-}
-
-/* .hero-btn--highlight { */
-.btn--full:link,
-.btn--full:visited {
-  background-color: #e67e22;
-  color: #fff;
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
-  /* ! now one thing to do is space between two these button elements 
-    * so we can add margin-right to this button but it's not best way
-    * and we also need to reuse this class btn--full right so we don't do that
-    ? so we can add another container and use flexbox or CSS grid but which only two elements and it's also not best choose
-    * and we will add the modified class and in this case it's helper class: margin-right-sm which we will reuse*/
-}
-
-.btn--full:hover,
-.btn--full:active {
-  background-color: #cf711f;
-  /* ! now in real website when we hover to button the button will have animation maybe slow and create beautiful animation but in here we simply change the color from this to other so it's not good
-  * we can use just CSS to add some animation, but we need to add the state before we hover  
-  */
-}
-
-.btn--outline:link,
-.btn--outline:visited {
-  background-color: #fff;
-  color: #343a40;
-}
-
-.btn--outline:hover,
-.btn--outline:active {
-  background-color: #fae5d3;
-  /* border: 0.3rem solid #fff; */
-  /* ! when we add the border like this when we hover border is created the outside space right therefore it'll change the dimension of the content, container... so it's not what we want
-  * we will use nice trick: ADD BORDER INSIDE ELEMENT WITH BOX-SHADOW PROPERTY */
-  box-shadow: inset 0 0 0 3px #fff;
-  /* * with this value set for box-shadow it'll scale 3px with color #fff */
-}
-
-.margin-right-sm {
-  /* * so now it works and very easy to achieve 
-    when we create helper classes we really want to apply this style
-    >>> we can use important keyword to ensure that happen cuz it'll do this style is highest priority right
-      ! with experience we will know when we should use helper classes and usually it related to margin which we want reuse in multiple places but we do not want to add to specific elements because then when we want to reuse them somewhere else it might create some conflict
-      * and of course we don't use link and visited pseudo element here cuz we want use this to all element not only buttons*/
-
-  margin-right: 2.4rem !important;
-}
-
-.margin-bottom-sm {
-  margin-bottom: 3.2rem;
-}
-
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
   **************** HEADER*****************
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
@@ -300,7 +124,7 @@ body {
   max-width: 130rem;
   margin: 0 auto;
   /* background-color: #e67e22; */
-  margin-bottom: 4.8rem;
+  /* margin-bottom: 4.8rem; */
 }
 /* .hero-description {
 } */
@@ -413,31 +237,135 @@ body {
 
 .section-how {
   padding: 9.6rem 0;
-  font-size: 5rem;
-  /* * so now if we want the elements must to put 2x2 range we need set it to grid right and go to this section-how selector set but it's not good practice
-  ! because maybe after that we need to writ more code repeat over over again when we want element to grid element right
-  * so therefore instead go to per element and set it to grid we can create the reuse GRID class */
-  /* display: grid;
-  grid-template-columns: 1fr 1fr; */
-  background-color: orangered;
+  /* background-color: #fae5d3; */
 }
 
-.section-how div {
-  padding: 4.8rem;
+/* .section-how div {
+  align-items: center;
+} */
+
+/* .how-description {
+  grid-column: 1/-1;
+} */
+
+.step-heading {
+  /* * we should use the big space here because it's different part of the section and we can use the mid of the space between section in this case we have 192px so we can choose the number near 96px */
+  margin-bottom: 9.6rem;
 }
 
-.container div:nth-child(1) {
-  background-color: aqua;
+.subheading {
+  /* ! notice: if we set this to inline-block now the heading after this element will side by side
+  ! in this case we don't see it side by side because the h3 element is block element
+  * but to ready we should give it block element instead use inline-block  */
+  /* display: inline-block; */
+  display: block;
+  font-size: 1.6rem;
+  color: #cf711f;
+  font-weight: 500;
+  margin-bottom: 3.2rem;
+  letter-spacing: -0.08rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
 }
 
-.container div:nth-child(2) {
-  background-color: aquamarine;
+.step-text-box {
+  /* align-self: center; 
+* so we can do it to center the grid element itself vertically
+! we have many way to do it and we should choose the best way and here we should put it in parent container, because it'll not repeat our code and easy to maintain
+* and doing that we will create new reuse class to can reuse over again right*/
 }
 
-.container div:nth-child(3) {
-  background-color: yellow;
+.step-description {
+  font-size: 2rem;
+  line-height: 1.6;
 }
 
-.container div:nth-child(4) {
-  background-color: orange;
+.step-number {
+  font-size: 9.8rem;
+  /* * because the font-size is big we need to down the font-weight and in this case 600 is good */
+  font-weight: 600;
+  /* * we also need the light color for this
+  ! but now the issue here that the very light color is not good for the visible possible
+  ! however we can break rules in logical situations like in this case the number is not really important so we can do it*/
+  color: #ced4da;
+  margin-bottom: 3.2rem;
 }
+
+.step-img-box {
+  /* justify-self: center; */
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+/* * Remember that when we have properties common value we can use list selector if it has 2 3 element right */
+.step-img-box::before,
+.step-img-box::after {
+  content: "";
+  display: block;
+  border-radius: 50%;
+  position: absolute;
+  z-index: -1;
+}
+
+.step-img-box::before {
+  /* position: absolute; */
+  /* * keep in mind that's to this after or before element display we need set it the content, if not content we can set it empty string */
+  /* display: block; */
+  /* content: ""; */
+  /* padding: 18rem;
+  !remember like image we also need this element is also flexible  */
+  width: 70%;
+  /* height: 70%; */
+  /* ! now we have an issue if we don't use position absolute in this case the height not apply with percent % unit
+  * and therefore we can use nice trick for it */
+  padding-bottom: 70%;
+  /* ! remember that's in here 70% is the 70% of width parent element not height(only height property is % of height parent element) 
+  * so it'll be create an element with the height is 0 but since we had padding-bottom: 70% now it'll be create square and we can use 50% set for border-radius to make it circle*/
+  /* border-radius: 50%; */
+  background-color: #fae5d3;
+  /* margin-left: -50%; */
+  /* 
+  ! because the parent element here is position relative but it's also flexbox container so the align-items, and justify-content will also apply so we do not need to use this technique bellow
+  top:50%;
+  left:50%;
+  transform: translate(-50%, -50%); */
+  /* * Now we have an issue that this element here is on top image but we want it behind image right so how can we do that? 
+  * well we will use z-index: we can put z-index to set the z direction to -1 to smaller than default of image is 1 and it'll behind
+  * or we can set the z-index to .step-img to 2 to > 1 cuz by default image and this element is 1 so we need image higher to on top right*/
+  /* z-index: -1; */
+}
+
+/* ? We can't use ::before pseudo element many times so we need use ::after if we want add the second pseudo element */
+.step-img-box::after {
+  /* content: "";
+  display: block; */
+  width: 55%;
+  padding-bottom: 55%;
+  background-color: #f8d8bd;
+  /* border-radius: 50%;
+  position: absolute;
+  z-index: -1; */
+}
+
+.step-img {
+  /* z-index: 2; */
+  /* width: 24rem; 
+  * width: 24rem it's fixed and then when the viewport change and smaller it'also still keep 24rem and it's not good
+  ! the reason why we use div element to contain this img element to set image to value with unit % and become flexible image
+  * and the image is the first we style because it's not automatically scale up or down like text and we need to do it become flexible*/
+  width: 45%;
+}
+/* .step-img-box:nth-child(odd) {
+  background-color: #e67e22;
+}
+.step-text-box:nth-child(even) {
+  background-color: #e67e22;
+} */
+
+/* .how-text-box:nth-child(odd) {
+  grid-column: 2/3;
+  grid-row: 2/3;
+} */
