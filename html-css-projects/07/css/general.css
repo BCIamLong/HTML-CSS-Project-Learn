@@ -18,8 +18,8 @@ paragraph: default 1.6
 *---------------------------------------------------------------------------/
 *-------------05 COLORS----------------------------
 Primary: #e67e22
-Tints: #fae5d3, #ced4da, #f8d8bd
-Shades:#cf711f
+Tints: #fae5d3, #ced4da, #f8d8bd,
+Shades:#cf711f,#495057
 Accent:
 Greys: #343a40, #212529
 
@@ -107,6 +107,15 @@ body {
 
 .grid--center-h {
   justify-items: center;
+}
+
+.flex {
+  display: flex;
+  /* gap: 4.8rem; */
+}
+
+.flex--center-v {
+  align-items: center;
 }
 
 .heading-primary,

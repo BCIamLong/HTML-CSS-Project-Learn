@@ -231,6 +231,58 @@
   width: 9rem;
   height: auto;
 }
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+  **************** FEATURED IN SECTION*****************
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.section-featured-in {
+  /* background-color: aquamarine; 
+  ! so this is small section so we do not need many space between other section right*/
+  /* padding: 9.6rem 0; */
+  padding: 4.8rem 0 2.4rem 0;
+}
+
+.featured-logo {
+  /*
+  !Remember that the logo is not like image because it needs to set a certain width otherwise it’ll grow when it can so it not good when we use % and logo always have a small size right we can use rem unit and set it
+  * notice when we manipulate with the element have the width big we can use height to set value and auto figure out width
+  * and this way is more natural */
+  height: 3.2rem;
+  /* background-image: linear-gradient(
+    rgba(52, 58, 64, 0.8),
+    rgba(52, 58, 64, 0.1)
+  ); */
+  /* * so with this logo images we need to do it become gay to decrease the attention because it's has many color and these colors not what we want 
+  * so we should do it become gray color to less attention, so how can we do that?
+  * well we will use filter property: and filter can do many many things and one of them is grayscale() which we need */
+  /* filter: grayscale(100%); */
+  /* ! but we need the problem here that because the logo have many color will convert to two colors is black and gray but we need it's only one color
+  * so how we solve this issue? we will use another function is called brightness
+  * and we can use the property combine with brightness with called contrast to edit the contrast of these logo cuz it's too black*/
+  /* filter: brightness(0) contrast(40%); */
+  /* * we also have other way to do it become gray that use opacity property
+  * values: 1 to 100%: visible, -n percent it'll invisible  */
+  /* filter: brightness(0);
+  opacity: 100%; */
+  filter: brightness(0) contrast(10%);
+  /* * So in this case the colors contrast is not good but one time again we break rule because this content is not important 
+  * the important here is a logo and it's still look good because it has the quite big size right */
+}
+
+.featured-in-box {
+  /* padding: 0 4.8rem; */
+  justify-content: space-around;
+}
+
+.featured-in-heading {
+  text-align: center;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  color: #495057;
+  letter-spacing: 0.05rem;
+  font-weight: 500;
+}
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
   **************** HOW IT WORKS SECTION*****************
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
