@@ -305,21 +305,6 @@
   margin-bottom: 9.6rem;
 }
 
-.subheading {
-  /* ! notice: if we set this to inline-block now the heading after this element will side by side
-  ! in this case we don't see it side by side because the h3 element is block element
-  * but to ready we should give it block element instead use inline-block  */
-  /* display: inline-block; */
-  display: block;
-  font-size: 1.6rem;
-  color: #cf711f;
-  font-weight: 500;
-  margin-bottom: 3.2rem;
-  letter-spacing: -0.08rem;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-}
-
 .step-text-box {
   /* align-self: center; 
 * so we can do it to center the grid element itself vertically
@@ -421,3 +406,134 @@
   grid-column: 2/3;
   grid-row: 2/3;
 } */
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+  **************** THE MEALS SECTION *****************
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+.section-meals {
+  padding: 9.6rem 0;
+}
+/* 
+.meals-heading-box {
+  grid-column: 1/-1;
+} */
+.meals-heading {
+}
+.meals-description {
+}
+.meal-card {
+  /* background-color: aquamarine; */
+  /* padding: 3.2rem; */
+  box-shadow: 0 1.6rem 3.2rem 0 rgba(0, 0, 0, 0.1);
+  border-radius: 0.3rem;
+  /* * use overflow to hidden the part of image outside card */
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.meal-card:hover {
+  /* width: 101%; */
+  /* * so when we hover to meal card we can move up this card little bit create nice animation */
+  /* transform: translate(0, -1%); */
+  /* * if we only use for Y vertically we can also use translateY() */
+  transform: translateY(-1%);
+  /* * but now we can also do better with do the shadow little bit dark, like when we move up the card like from the source to the light so it'll decrease shadow because it nears light right and when we end hover it'll back to shadow */
+  box-shadow: 0 3.2rem 6.4rem 0 rgba(0, 0, 0, 0.07);
+}
+
+.meal-img {
+  width: 100%;
+  /* margin-bottom: 3.2rem; */
+  /* border-radius: 0.3rem;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  ! so we use these properties to fix the image round with the container right but we also have another way to do it
+  * that we will use overflow property and set to hidden */
+}
+.meal-details {
+  padding: 3.2rem;
+}
+
+.meal-details-tags {
+  margin-bottom: 1.2rem;
+  gap: 0.4rem;
+}
+
+.meal-details-tag {
+  /* !Which smaller text component we always style like this  */
+  font-size: 1.2rem;
+  display: inline-block;
+  padding: 0.4rem 0.8rem;
+  text-transform: uppercase;
+  background-color: #51cf66;
+  /* *Border radius usually go with tag element */
+  border-radius: 0.3rem;
+  font-weight: 600;
+  /* margin-bottom: 1.2rem; */
+}
+
+.meal-details-title {
+  font-size: 2rem;
+  margin-bottom: 2.4rem;
+  color: #343a40;
+  font-weight: 600;
+  line-height: 1.3;
+  /* letter-spacing: 1rem; */
+}
+.meal-details-list {
+  /* display: flex;
+  flex-direction: column;
+  gap: 1.6rem; */
+  gap: 1.6rem;
+  list-style: none;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+.meal-details-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+.meal-details-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #cf711f;
+}
+
+.diets-box {
+  /* justify-self: center; */
+  /* align-self: center; */
+  /* padding: 3.2rem; */
+  /* background-color: #fae5d3; */
+  border-radius: 0.3rem;
+}
+.diets-title {
+  font-size: 2.4rem;
+  font-weight: 700;
+  line-height: 1.5;
+  margin-bottom: 3.2rem;
+  color: #212529;
+}
+.diets-list {
+  font-size: 1.6rem;
+  gap: 2.4rem;
+  list-style: none;
+}
+.diets-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.diets-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #cf711f;
+}
+
+.all-recipes {
+  text-align: center;
+  /* * we don't put font-size in link selector because when we reuse it we also have many different size not only one
+  * and the link inside this container will inherit this font-size right  */
+  font-size: 2rem;
+}

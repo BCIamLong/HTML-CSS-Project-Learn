@@ -19,7 +19,7 @@ paragraph: default 1.6
 *-------------05 COLORS----------------------------
 Primary: #e67e22
 Tints: #fae5d3, #ced4da, #f8d8bd,
-Shades:#cf711f,#495057
+Shades:#cf711f,#495057, #51cf66
 Accent:
 Greys: #343a40, #212529
 
@@ -118,6 +118,14 @@ body {
   align-items: center;
 }
 
+.flex--direct-col {
+  flex-direction: column;
+}
+
+.flex--gap-sm {
+  gap: 1.6rem;
+}
+
 .heading-primary,
 .heading-secondary,
 .heading-tertiary {
@@ -146,6 +154,20 @@ body {
   line-height: 1.3;
 }
 
+.subheading {
+  /* ! notice: if we set this to inline-block now the heading after this element will side by side
+  ! in this case we don't see it side by side because the h3 element is block element
+  * but to ready we should give it block element instead use inline-block  */
+  /* display: inline-block; */
+  display: block;
+  font-size: 1.6rem;
+  color: #cf711f;
+  font-weight: 500;
+  margin-bottom: 3.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+}
+
 .btn:link,
 .btn:visited {
   text-decoration: none;
@@ -167,8 +189,11 @@ body {
    * in this case from  background-color: #e67e22; to background-color: #cf711f;
    ! remember we only put this transition property on the original state in this case before we hover
    */
-  /* transition: all 0.5s; */
-  transition: background-color 0.5s;
+  /* ! because we need the box-shadow in learn more button also animation not only back-ground 
+   * so we can use all keyword to do all properties hover will animation
+   * usually we always use all keyword cuz it's shortcut and easy to look */
+  transition: all 0.5s;
+  /* transition: background-color 0.5s; */
 }
 
 /* .hero-btn--highlight { */
@@ -220,4 +245,93 @@ body {
 
 .margin-bottom-sm {
   margin-bottom: 2.4rem !important;
+}
+
+/* * md: medium */
+.margin-bottom-md {
+  margin-bottom: 4.8rem !important;
+}
+
+.margin-bottom-hg {
+  margin-bottom: 9.6rem !important;
+}
+
+/* * so we should custom <strong> element when we use it, cuz by default it looks not good(too bold) 
+*<strong> element which we will use the most time so we also put it in general*/
+strong {
+  font-weight: 500;
+  /* font-size: 1.4rem; */
+}
+
+/* * Usually the tag is can be use many time so we should put it in general */
+.tag {
+  /* !Which smaller text component we always style like this  */
+  display: inline-block;
+  cursor: pointer;
+  font-size: 1.2rem;
+  padding: 0.4rem 0.8rem;
+  text-transform: uppercase;
+  /* *Border radius usually go with tag element */
+  border-radius: 0.3rem;
+  font-weight: 600;
+  /* margin-bottom: 1.2rem; */
+}
+
+/* ! in food website like this we have few categories and each of them we can style different color by create many reuse class for per background color*/
+.tag-vegetarian {
+  background-color: #51cf66;
+}
+.tag--vegan {
+  background-color: #94d82d;
+}
+.tag--paleo {
+  background-color: #fcc419;
+}
+
+/* !LINK WITH ANIMATION 1 */
+/* * the link is element we will use many time in our website on many pages and so we can create reuse class and reuse over over again */
+.link:link,
+.link:visited {
+  /* * so because this is link not button so we can create style different with button */
+  display: inline-block;
+  padding-bottom: 1.2rem;
+  /* background-color: #e67e22; */
+  color: #e67e22;
+  text-decoration: none;
+  /* * remember when we use border radius to hover we need to set by the border radius for the original otherwise the animation created look not good */
+  border-bottom: 0.3rem solid #fff;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  /* *Usually when we hover to a link it will display the underline but we don't use text-decoration to set it to underline
+  * so instead we will use border radius to to it */
+  border-bottom: 0.3rem solid #cf711f;
+  color: #cf711f;
+}
+
+/* !LINK WITH ANIMATION 2 */
+.link:link,
+.link:visited {
+  display: inline-block;
+  padding-bottom: 1.2rem;
+  color: #e67e22;
+  text-decoration: none;
+  /* * we can use currentColor keyword to get the current text color */
+  border-bottom: 0.2rem solid currentColor;
+  transition: all 0.3s;
+}
+
+.link:hover,
+.link:active {
+  color: #cf711f;
+  /* * notice now when we hover to link if we set border-bottom: none so now the size of border-bottom is lost and all size of layout will change and it's not good right */
+  /* border-bottom: 0.2rem solid #fff; 
+  * so instead we use the fixed color we can use the transparent keyword to get the background color of the parent container*/
+  border-bottom: 0.3rem solid transparent;
+}
+
+.center-text {
+  text-align: center;
 }
