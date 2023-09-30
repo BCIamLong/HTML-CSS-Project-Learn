@@ -429,6 +429,162 @@
           <a class="link" href="#">See all recipes &rarr; </a>
         </div>
       </section>
+      <!-- ! in this case we shouldn't use reuse grid why? because we need not the same column
+      * so there we need to custom this grid for this section -->
+      <!-- <section class="section-testimonials grid grid--2-cols grid--gap-0"> -->
+      <section class="section-testimonials">
+        <div class="testimonials-container">
+          <div class="testimonials-heading">
+            <span class="subheading">Testimonials</span>
+            <h2 class="heading-secondary">Customer testimonials</h2>
+          </div>
+          <div class="testimonials grid grid--2-cols grid--gap-md">
+            <!-- ! so we can use the <figure> element for these testimonial cuz figure is use for represent some self-contained content and which sometime have caption and it perfect for things like diagrams, photos or code listings or really anything that can have a caption and that is self-contained
+            * and the testimonial we write here is also good to use <figure> element -->
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                src="content/img/customers/dave.jpg"
+                alt="The author's of this testimonial, Dave Bryson"
+              />
+              <!-- ! so now here about testimonial text we can use <blockquote> element, and blockquote represent for quote text like things that someone else said
+              ! and testimonial is exactly that, and it's also true with product reviews, quote of someone, context of an article or block post 
+              * and blockquote element is very perfect for this case right-->
+              <blockquote class="testimonial-text">
+                Inexpensive, healthy and great-tasting meals, without even
+                having to order manually! It feels truly magical
+              </blockquote>
+              <span class="testimonial-author">&mdash; Dave Bryson</span>
+            </figure>
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                src="content/img/customers/ben.jpg"
+                alt="The author's of this testimonial, Ben Hadley"
+              />
+              <blockquote class="testimonial-text">
+                The AI algorithm is crazy good, it chooses the right meals for
+                me every time. It's amazing not to worry about food anymore!
+              </blockquote>
+              <span class="testimonial-author">&mdash; Ben Hadley</span>
+            </figure>
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                src="content/img/customers/steve.jpg"
+                alt="The author's of this testimonial, Steve Miller"
+              />
+              <blockquote class="testimonial-text">
+                Omnifood is a life saver! I just started a company, so there's
+                no time for cooking. I couldn't live without my daily meals now!
+              </blockquote>
+              <span class="testimonial-author">&mdash; Steve Miller</span>
+            </figure>
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                src="content/img/customers/hannah.jpg"
+                alt="The author's of this testimonial, Hannah Smith"
+              />
+              <blockquote class="testimonial-text">
+                I got Omnifood for the whole family, and it frees up so much
+                time! Plus, everything is organic and vegan and without plastic.
+              </blockquote>
+              <span class="testimonial-author">&mdash; Hannah Smith</span>
+            </figure>
+          </div>
+        </div>
+        <div class="gallery grid grid--3-cols grid--gap-0">
+          <!-- ! we also use the figure element for here cuz it's gallery right
+            ! usually in blog post we have <figure> and with image and then we have caption we can use <figcaption> element to write caption
+            * so it quite common when we always use <figure> element to contain image, and then if have caption we can also write caption
+            * but now for this case we only want image and the reason we want container for it that because we will create some animation -->
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-1.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-2.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-3.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-4.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-5.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-6.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-7.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-8.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-9.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-10.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-11.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-12.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+        </div>
+      </section>
     </main>
 
     <!-- *ICON PACKAGE: ION ICONS PACKAGE -->

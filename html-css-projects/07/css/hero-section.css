@@ -537,3 +537,83 @@
   * and the link inside this container will inherit this font-size right  */
   font-size: 2rem;
 }
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+  **************** THE TESTIMONIALS SECTION *****************
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+.section-testimonials {
+  display: grid;
+  /* *We can use 100fr to edit size of per part in grid, then we can divide 55fr 45fr(sum 100fr) right and it's easy to edit
+  ! it's not rule, so do with 100fr is easy to edit we can also do it like 1 1.5.... So then choose the best*/
+  grid-template-columns: 55fr 45fr;
+  background-color: #fae5d3;
+  /* align-items: center; */
+}
+
+.testimonials-heading {
+  margin-bottom: 9.6rem;
+}
+
+.testimonials-container {
+  /* padding: 0 0 0 4.8rem; */
+  /* padding: 9.6rem 0; */
+  padding: 9.6rem 3.2rem;
+}
+
+.testimonials {
+}
+
+.testimonial {
+}
+
+.testimonial-img {
+  /* width: 40%; */
+  width: 6.4rem;
+  /* height: 30%; */
+  border-radius: 50%;
+  margin-bottom: 3.2rem;
+}
+.testimonial-text {
+  font-size: 1.6rem;
+  line-height: 1.6;
+  margin-bottom: 2.4rem;
+}
+.testimonial-author {
+  font-size: 1.4rem;
+  /* font-weight: 500; */
+  color: #495057;
+}
+
+.gallery {
+  /* padding: 1.6rem;
+  background-color: #fae5d3;
+  gap: 1.6rem; */
+  padding: 1.6rem;
+  gap: 1.6rem;
+  align-self: center;
+}
+
+.gallery-item {
+  /* * we can use overflow hidden to hide the part of image scale and by that it will create the beautiful animation */
+  overflow: hidden;
+}
+
+/* ! notice that with small image like photo of customer like this we don't want it become flexible because it's too big and flexible is only fix with the big images
+* therefore we will do it fixed images */
+.gallery-img {
+  display: block;
+  /* !by default the image is inline element so it has some space by default we can see it right 
+  * So to remove this space we can use set it to block element*/
+  width: 100%;
+  transition: all 0.5s;
+}
+
+.gallery-img:hover {
+  /* transform: scale(1.2, 1.2); 
+  * if the values in the same we can use shortcut*/
+  transform: scale(1.2);
+  /* * rotate function will change the element with 50deg, it'll turn to 50deg, and it might good if we want create more creative animation
+  ! deg is unit in CSS which stand for degree */
+  /* transform: rotate(50deg); */
+}
