@@ -514,22 +514,6 @@
   margin-bottom: 3.2rem;
   color: #212529;
 }
-.diets-list {
-  font-size: 1.6rem;
-  gap: 2.4rem;
-  list-style: none;
-}
-.diets-item {
-  display: flex;
-  align-items: center;
-  gap: 1.2rem;
-}
-
-.diets-icon {
-  width: 2.4rem;
-  height: 2.4rem;
-  color: #cf711f;
-}
 
 .all-recipes {
   text-align: center;
@@ -616,4 +600,168 @@
   /* * rotate function will change the element with 50deg, it'll turn to 50deg, and it might good if we want create more creative animation
   ! deg is unit in CSS which stand for degree */
   /* transform: rotate(50deg); */
+}
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+  **************** THE PRICING SECTION *****************
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+.section-pricing {
+  padding: 9.6rem 0;
+}
+.pricing-plan {
+  /* justify-self: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fff;
+  border-radius: 3rem;
+  border-top-right-radius: 0;
+  border-bottom-left-radius: 0;
+  /* ! We can set the width of these cards by use width and set value, cuz the default value is too big */
+  width: 80%;
+}
+
+.pricing-plan--starter {
+  border: 0.3rem solid #f8d8bd;
+  justify-self: end;
+  padding: 4.5rem 0;
+}
+
+.plan-name {
+  /* text-align: center; */
+  font-size: 1.6rem;
+  margin-bottom: 1.6rem;
+  line-height: 1.8;
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  color: #cf711f;
+}
+/* ! WE SHOULD CAREFUL WITH THE LINE HEIGHT CUZ THEN WHEN WE USE MEDIA TO CREATE RESPONSE WEBSITE WE WILL DECREASE THE FONT-SIZE AND IT'S ALSO EFFECT TO SPACE BETWEEN TEXT 
+* THEREFORE WE NEED USE LINE HEIGHT WITH CONSISTENT WAY WITH CERTAIN FONT-SIZE */
+.plan-price {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 7.4rem;
+  margin-bottom: 1.2rem;
+  /* text-align: center; */
+  font-weight: 600;
+  color: #212529;
+}
+.plan-text {
+  font-size: 1.4rem;
+  line-height: 1.8;
+  color: #495057;
+  margin-bottom: 4.8rem;
+  /* font-weight: 500; */
+}
+.plan-price span {
+  font-size: 3.2rem;
+  font-weight: 500;
+  /* color: #495057; */
+}
+.plan-details {
+  align-self: flex-start;
+  padding: 0 8rem;
+}
+
+.pricing-plan--complete {
+  padding: 4.8rem 0;
+  background-color: #fae5d3;
+  position: relative;
+  box-shadow: 0 0 2.4rem 0 rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.pricing-plan--complete::before {
+  content: "Best Value";
+  position: absolute;
+  top: 3.5%;
+  right: -10%;
+  font-size: 1.4rem;
+  padding: 1.2rem 3.2rem;
+  background-color: #fcc419;
+  border: 0.3rem dotted currentColor;
+  text-transform: uppercase;
+  color: #fff;
+  letter-spacing: 0.1rem;
+  font-weight: 700;
+  transform: rotate(45deg);
+}
+
+/* .plan-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  list-style: none;
+  font-size: 2rem;
+  line-height: 1.6;
+  margin-bottom: 3.2rem;
+}
+.pricing-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+! so we don't use this code cuz we will use the list and the flex reuse classes
+*/
+.pricing-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #e67e22;
+}
+
+.plan-sub-info {
+  font-size: 1.6rem;
+  background-color: #fae5d3;
+  color: #343a40;
+  padding: 2.4rem 0;
+  border-radius: 0.3rem;
+}
+
+.features {
+  padding: 4.8rem 0;
+  background-color: #fae5d3;
+}
+
+.feature {
+}
+
+.feature-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  padding: 1.2rem;
+  border-radius: 50%;
+  margin-bottom: 3.2rem;
+}
+.feature-icon--cook {
+  background-color: #f0b27a;
+  color: #cf711f;
+}
+.feature-icon--local {
+  background-color: #b2f2bb;
+  color: #2f9e44;
+}
+.feature-icon--time {
+  background-color: #fff3bf;
+  color: #fcc419;
+}
+.feature-icon--pause {
+  background-color: #ffa8a8;
+  color: #f03e3e;
+}
+
+.feature-title {
+  display: block;
+  font-size: 2.4rem;
+  line-height: 1.5;
+  font-weight: 700;
+  margin-bottom: 1.6rem;
+  color: #212529;
+}
+.feature-description {
+  font-size: 2rem;
+  line-height: 1.6;
 }

@@ -380,44 +380,41 @@
           </div>
           <div class="diets-box">
             <h3 class="diets-title">Works with any diet:</h3>
-            <ul class="diets-list flex flex--direct-col">
-              <li class="diets-item">
-                <ion-icon
-                  class="diets-icon"
-                  name="checkmark-outline"
-                ></ion-icon>
+            <ul class="list flex flex--direct-col">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
                 <span>Vegetarian</span>
               </li>
-              <li class="diets-item">
-                <ion-icon class="diets-icon" name="checkmark-outline"></ion-icon
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
                 ><span>Vegan</span>
               </li>
-              <li class="diets-item">
-                <ion-icon class="diets-icon" name="checkmark-outline"></ion-icon
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
                 ><span>Pescatarian</span>
               </li>
-              <li class="diets-item">
-                <ion-icon class="diets-icon" name="checkmark-outline"></ion-icon
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
                 ><span>Gluten-free</span>
               </li>
-              <li class="diets-item">
-                <ion-icon class="diets-icon" name="checkmark-outline"></ion-icon
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
                 ><span>Lactose-free</span>
               </li>
-              <li class="diets-item">
-                <ion-icon class="diets-icon" name="checkmark-outline"></ion-icon
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
                 ><span>Keto</span>
               </li>
-              <li class="diets-item">
-                <ion-icon class="diets-icon" name="checkmark-outline"></ion-icon
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
                 ><span>Paleo</span>
               </li>
-              <li class="diets-item">
-                <ion-icon class="diets-icon" name="checkmark-outline"></ion-icon
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
                 ><span>Low FODMAP</span>
               </li>
-              <li class="diets-item">
-                <ion-icon class="diets-icon" name="checkmark-outline"></ion-icon
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
                 ><span>Kid-friendly</span>
               </li>
             </ul>
@@ -583,6 +580,132 @@
               alt="Gallery image"
             />
           </figure>
+        </div>
+      </section>
+
+      <section class="section-pricing">
+        <div class="container margin-bottom-hg">
+          <span class="subheading">Pricing</span>
+          <h2 class="heading-secondary">
+            Eating well without breaking the bank
+          </h2>
+        </div>
+        <div class="container grid grid--2-cols margin-bottom-md">
+          <div class="pricing-plan pricing-plan--starter">
+            <p class="plan-name">Start</p>
+            <!-- ! With plan price we have $ and number so we can style this $ notation and create a good visual style
+            * we can put the price and text separate and highlight the price -->
+            <p class="plan-price"><span>&dollar;</span>399</p>
+            <p class="plan-text">per month. That's just $13 per meal</p>
+            <ul
+              class="plan-details list flex flex--direct-col margin-bottom-md"
+            >
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>1 meal per day</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Order from 11am to 9pm</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Delivery is free</span>
+              </li>
+              <!-- ! so we have an issue in here that the button of both card is not align cuz start card we have 3 details but with complete card we have 4 details 
+              * so to fix it we can simply add more one detail to start card and add the close icon to create good style -->
+              <li class="list-item">
+                <ion-icon class="list-icon" name="close-outline"></ion-icon>
+                <span></span>
+              </li>
+            </ul>
+            <a class="btn btn--outline" href="#">Get Started</a>
+          </div>
+          <div class="pricing-plan pricing-plan--complete">
+            <span class="plan-name">Complete</span>
+            <p class="plan-price"><span>&dollar;</span>649</p>
+            <p class="plan-text">per month. That's just $11 per meals</p>
+            <ul
+              class="plan-details list flex flex--direct-col margin-bottom-md"
+            >
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span><strong>2</strong> meals per day</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Order <strong>24/7</strong></span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Delivery is free</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Get access to latest recipes</span>
+              </li>
+            </ul>
+            <a class="btn btn--full" href="#">Get Started</a>
+          </div>
+        </div>
+
+        <div class="container center-text margin-bottom-hg">
+          <!-- ! we can use the <aside> in here, why? well usually we use the <aside> element for sidebar cuz the side related to many additional resources 
+          * but the <aside> also can use for the additional info even it's only have one content 
+          * in this case we want some additional info for the use to help user can truth and buy product -->
+          <aside class="plan-sub-info">
+            Prices include all applicable taxes. You can cancel at any time.
+            Both plans include the following:
+          </aside>
+        </div>
+
+        <div class="features">
+          <div class="container grid grid--4-cols">
+            <div class="feature">
+              <ion-icon
+                class="feature-icon feature-icon--cook"
+                name="infinite-outline"
+              ></ion-icon>
+              <span class="feature-title">Never cook again!</span>
+              <p class="feature-description">
+                Our subscriptions cover 365 days per year, even including major
+                holidays
+              </p>
+            </div>
+            <div class="feature">
+              <ion-icon
+                class="feature-icon feature-icon--local"
+                name="nutrition-outline"
+              ></ion-icon>
+              <span class="feature-title">Local and organic</span>
+              <p class="feature-description">
+                Our cooks only use local, fresh, and organic products to prepare
+                your meals.
+              </p>
+            </div>
+            <div class="feature">
+              <ion-icon
+                class="feature-icon feature-icon--time"
+                name="leaf-outline"
+              ></ion-icon>
+              <span class="feature-title">No waste</span>
+              <p class="feature-description">
+                All our partners only use reusable containers to package all
+                your meals.
+              </p>
+            </div>
+            <div class="feature">
+              <ion-icon
+                class="feature-icon feature-icon--pause"
+                name="pause-circle-outline"
+              ></ion-icon>
+              <span class="feature-title">Pause anytime</span>
+              <p class="feature-description">
+                Going on vacation? Just pause your subscription, and we refund
+                unused days.
+              </p>
+            </div>
+          </div>
         </div>
       </section>
     </main>

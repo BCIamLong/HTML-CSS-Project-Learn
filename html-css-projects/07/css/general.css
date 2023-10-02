@@ -89,7 +89,7 @@ body {
 * With technique we can export different styles with different classes to make them can be reusable across our page*/
 
 .grid--gap-0 {
-  gap: 0;
+  gap: 0 !important;
 }
 
 .grid--gap-sm {
@@ -108,6 +108,9 @@ body {
   grid-template-columns: repeat(3, 1fr);
 }
 
+.grid--4-cols {
+  grid-template-columns: repeat(4, 1fr);
+}
 /* ! when we have 2 or 3 selectors have in the same style property values we can use list selector to select the common styles
 * but if the the numbers is more than 3 selectors like 6, 10.... So that's time we should create reuse class and reuse because that's time use list selectors will do the code become complex  
 * in this case we have 3 selector heading-primary, heading-secondary, heading-tertiary and all three have common and we can use list selector
@@ -120,6 +123,16 @@ body {
 .grid--center-h {
   justify-items: center;
 }
+
+/* ! in the case we have many grid containers in one section so how we can manage the space between sections?
+* well we will do it like we did with the list <li> element before when we set margin-bottom to all li element then set the last element not have margin-bottom
+* so in this case we will set margin bottom to all grid, and if grid last child we can remove this margin-bottom 
+* but now we can do it shortcut with :not pseudo class which get the element if it's not element in expression
+* in this case it's not last child element*/
+
+/* .grid:not(:last-child) {
+  margin-bottom: 9.6rem;
+} */
 
 .flex {
   display: flex;
@@ -346,4 +359,25 @@ strong {
 
 .center-text {
   text-align: center;
+}
+
+/* !List is really good to reuse and in website we usually have the same list with not too much different style
+* so therefore it's candidate for reuse classes
+! if in our website we have the selector can use many time we should create the reuse class */
+.list {
+  font-size: 1.6rem;
+  gap: 2.4rem;
+  list-style: none;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+}
+
+.list-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #cf711f;
 }
