@@ -51,7 +51,7 @@
 .main-nav-link:visited {
   text-decoration: none;
   color: #343a40;
-  font-weight: 5000;
+  font-weight: 600;
   transition: all 0.5s;
   /* * we don't use 2rem because it's for paragraph, we can down this value to 1.8rem */
   font-size: 1.8rem;
@@ -771,7 +771,7 @@
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 
 .section-cta {
-  padding: 9.6rem 0;
+  padding: 4.8rem 0 9.6rem;
 }
 .cta {
   display: grid;
@@ -885,3 +885,90 @@
 /* .cta-img{
   width: 100%;
 } */
+
+/*>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+  **************** FOOTER *****************
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+.footer {
+  /* * we can add the subtle line to distinguish between other section with footer */
+  border-top: 0.2rem solid rgba(250, 228, 209, 0.5);
+  padding: 9.6rem 0 12.8rem 0;
+  /* * we also have the shortcut for value like here: we can write 3 value: top horizontally bottom: */
+  padding: 9.6rem 0 12.8rem;
+  /* background-color: #fae5d3; */
+}
+
+.grid--footer {
+  grid-template-columns: 1.5fr 1.5fr 1fr 1fr 1fr;
+  column-gap: 4.8rem;
+  row-gap: 3.2rem;
+  /* align-items: start; */
+}
+
+.contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  font-size: 1.6rem;
+  line-height: 1.8;
+  font-style: normal;
+}
+
+.footer-heading {
+  font-size: 2.4rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 4.8rem;
+}
+
+.logos-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.social-links {
+  list-style: none;
+}
+.social-link {
+}
+.social-icon {
+  width: 2.4rem;
+  height: 2.4rem;
+  color: #343a40;
+}
+.copyright {
+  font-size: 1.2rem;
+  color: #495057;
+  font-style: italic;
+  /* * So again we will use s trick to make this element in the end of this container by use margin-top auto
+  ! notice that it's also depend the height of the parent container */
+  margin-top: auto;
+}
+
+.nav-col {
+}
+
+.footer-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2.4rem;
+  list-style: none;
+  font-size: 1.6rem;
+  line-height: 1.6;
+}
+
+.footer li {
+}
+
+.footer-link:link,
+.footer-link:visited {
+  text-decoration: none;
+  color: #495057;
+  transition: all 0.3s;
+}
+
+.footer-link:hover,
+.footer-link:active {
+  color: #212529;
+}

@@ -19,11 +19,13 @@
     ! <header> element can be use for start the page, or for header of certain components, sections-->
     <header class="header">
       <!-- <div class="logo"> -->
-      <img
-        class="logo"
-        src="content/img/omnifood-logo.png"
-        alt="Onifood logo"
-      />
+      <a href="#">
+        <img
+          class="logo"
+          src="content/img/omnifood-logo.png"
+          alt="Onifood logo"
+        />
+      </a>
       <!-- </div> -->
       <!-- !<nav> element is used for major navigation blocks that we have on our page so not all collections of links need to wrapped elements
         * we should named for it: main-nav class cuz in some part of website like footer is also have nav element to navigation related parts right-->
@@ -32,9 +34,10 @@
         <!-- * Usually we add a bunch of anchor element inside <nav> element but it's not best semantic way because navigation should be a list of links grouped together
           * what we do here is create unordered list and inside that list we will add all the links: main-nav-list and it's many developers used -->
         <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="#">Home</a></li>
-          <li><a class="main-nav-link" href="#">Shop</a></li>
-          <li><a class="main-nav-link" href="#">Contact</a></li>
+          <li><a class="main-nav-link" href="#">How it works</a></li>
+          <li><a class="main-nav-link" href="#">Meals</a></li>
+          <li><a class="main-nav-link" href="#">Testimonials</a></li>
+          <li><a class="main-nav-link" href="#">Pricing</a></li>
           <!-- ! usually in navigation like this we usually have  a call to action as the very last item in the navigation
           * something like call to action on hero section start eating well button remember that
           * and two this call to action buttons will lead in the same places -->
@@ -803,6 +806,95 @@
         </div>
       </section>
     </main>
+    <!-- <hr /> -->
+    <footer class="footer">
+      <div class="container grid grid--footer">
+        <div class="logos-col">
+          <!-- <h3 class="heading-tertiary margin-bottom-sm">Logo</h3> -->
+          <a href="#">
+            <img
+              class="logo margin-bottom-md"
+              src="content/img/omnifood-logo.png"
+              alt="Onifood logo"
+            />
+          </a>
+          <ul class="social-links flex flex--gap-sm margin-bottom-sm">
+            <li>
+              <a href="#" class="footer-link"
+                ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="footer-link"
+                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="footer-link"
+                ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
+              ></a>
+            </li>
+          </ul>
+          <p class="copyright">Copyright &copy; by longhoang in 2023</p>
+        </div>
+
+        <div class="address-col">
+          <p class="footer-heading">Contact us</p>
+          <address class="contacts">
+            <p class="contact-item">
+              623 Harrison St., 2nd Floor, San Francisco, CA 94107
+            </p>
+            <!-- *We can use special link href for the phone number(tel:phoneNumber), email(mailto:email)
+            * it'll open your app when you click to this link with phone it'll open your phone number app
+            * with mail it'll open your email app 
+            ! so it might good in some situation -->
+            <p class="contact-item">
+              <a class="footer-link" href="tel:415-201-6370">415-201-6370</a>
+            </p>
+            <p class="contact-item">
+              <a class="footer-link" href="mailto:hello@omnifood.com"
+                >hello@omnifood.com</a
+              >
+            </p>
+            <!-- <p class="contact-item">Instagram, facebook, twitter</p> -->
+          </address>
+        </div>
+        <!-- * we need to use <nav> element here cuz all the links in here always link to a part of the website so it's also navigation but in footer right -->
+        <nav class="nav-col">
+          <p class="footer-heading">Onifood</p>
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-link" href="#">Create account</a>
+            </li>
+            <li><a class="footer-link" href="#">Sign in</a></li>
+            <li><a class="footer-link" href="#">iOS app</a></li>
+            <li>
+              <a class="footer-link" href="#">Android app</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="nav-col">
+          <p class="footer-heading">Company</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">About Onifood</a></li>
+            <li><a class="footer-link" href="#">For Business</a></li>
+            <li><a class="footer-link" href="#">Cooking partners</a></li>
+            <li><a class="footer-link" href="#">Careers</a></li>
+          </ul>
+        </nav>
+        <nav class="nav-col">
+          <p class="footer-heading">Policy</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Recipe directory</a></li>
+            <li><a class="footer-link" href="#">Help center</a></li>
+            <li><a class="footer-link" href="#">Privacy & terms</a></li>
+          </ul>
+        </nav>
+        <!-- <div class="copyright">
+          <p>Copyright &copy; by longhoang</p>
+        </div> -->
+      </div>
+    </footer>
 
     <!-- *ICON PACKAGE: ION ICONS PACKAGE -->
     <script

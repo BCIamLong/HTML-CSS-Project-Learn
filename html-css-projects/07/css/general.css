@@ -126,6 +126,10 @@ body {
 .grid--4-cols {
   grid-template-columns: repeat(4, 1fr);
 }
+
+.grid--5-cols {
+  grid-template-columns: repeat(5, 1fr);
+}
 /* ! when we have 2 or 3 selectors have in the same style property values we can use list selector to select the common styles
 * but if the the numbers is more than 3 selectors like 6, 10.... So that's time we should create reuse class and reuse because that's time use list selectors will do the code become complex  
 * in this case we have 3 selector heading-primary, heading-secondary, heading-tertiary and all three have common and we can use list selector
@@ -401,6 +405,7 @@ strong {
   font-size: 1.6rem;
   gap: 2.4rem;
   list-style: none;
+  line-height: 1.6;
 }
 
 .list-item {
