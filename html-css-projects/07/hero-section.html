@@ -708,6 +708,100 @@
           </div>
         </div>
       </section>
+
+      <section class="section-cta">
+        <!-- <div class="container cta-container"> -->
+        <div class="container">
+          <div class="cta">
+            <div class="cta-text-box">
+              <div class="cta-header margin-bottom-md">
+                <!-- <span class="subheading">Call to action</span> -->
+                <h2 class="heading-secondary margin-bottom-sm">
+                  We offer a free sample meal
+                </h2>
+                <p class="cta-text">
+                  Healthy, tasty and hassle-free meals are waiting for you.
+                  Start eating well today. You can cancel or pause anytime. And
+                  the first meal is on us!
+                </p>
+              </div>
+              <!-- *The <form> element simply it's block and contain input element
+                * to send data with form we need to define the action property: action="value" value here is the place where we want send data to like link of file -->
+              <form class="cta-form" action="#">
+                <div class="form-item">
+                  <!-- * remember when we use the website from somewhere when we click to the label text it'll give us go to fill the input so how can we do that in our code?
+                  * we will use for property to link label and input, to link that we need give input ID(not class) and use this id is value of for property -->
+                  <label for="name">Name</label>
+                  <!-- * required is not have value property we only need to write required and do not something -->
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="John Smooth"
+                    required
+                  />
+                </div>
+                <!-- * usually we have <div> element to wrap this <label> and <input> to easy to style them and layout -->
+                <div class="form-item">
+                  <label for="email">Email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="johnsmooth@gmail.com"
+                    required
+                  />
+                </div>
+                <div class="form-item">
+                  <label for="address">Address</label>
+                  <input
+                    id="address"
+                    type="text"
+                    name="address"
+                    placeholder="US"
+                    required
+                  />
+                </div>
+                <!--
+                  * We have many type of input can useful in some certain situation
+                  <input type="checkbox" />
+                <input type="number" /> -->
+                <div class="form-item">
+                  <label for="select-where">You know Onifood by</label>
+                  <select name="select-where" id="select-where" required>
+                    <!-- * with <input> element the value we write to input send to backend if we submit but with <select> <option> element we need define the value property if we send value when we submit
+                    * the first one usually is empty value and guide users-->
+                    <option value="">Please choose one option:</option>
+                    <option value="ads">Ads</option>
+                    <option value="social">Social network</option>
+                    <option value="friends">Friends or family</option>
+                    <option value="youtube">Youtube</option>
+                    <option value="other" disabled>From other</option>
+                  </select>
+                </div>
+
+                <!-- ! notice that we don't use type="button" in this case because the button in form is special and if we set type button for it it'll back the normal button and not effect to this form -->
+                <button class="btn btn--form">Sign up now</button>
+              </form>
+            </div>
+            <!-- * so now this element here not clear cuz it doesn't have any content, so we want the reader knows this is image element and write some description for reader can understand so how can we do that
+          * well we will use the role and aria-label properties
+          * role is define the element, aria-label is define the description for this element-->
+            <div
+              class="cta-img-box"
+              role="img"
+              aria-label="Woman is enjoy when she's having meal"
+            >
+              <!-- ! so we don't add the image here instead we will use background image cuz it's easy for us do some things creative like add some color over on background-img -->
+              <!-- <img
+              class="cta-img"
+              src="content/img/eating.jpg"
+              alt="The customer is having meal image"
+            /> -->
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- *ICON PACKAGE: ION ICONS PACKAGE -->

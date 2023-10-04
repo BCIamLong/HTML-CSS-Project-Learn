@@ -18,8 +18,8 @@ paragraph: default 1.6
 *---------------------------------------------------------------------------/
 *-------------05 COLORS----------------------------
 Primary: #e67e22
-Tints: #fae5d3, #ced4da, #f8d8bd,
-Shades:#cf711f,#495057, #51cf66
+Tints: #fae5d3, #ced4da, #f8d8bd, #eb984e
+Shades:#cf711f,#495057, #51cf66, #45260a
 Accent:
 Greys: #343a40, #212529
 
@@ -30,11 +30,26 @@ Default: 3px(0.3rem)
 Default:
 -0.03rem, -0.05rem, -0.1rem, 0.05rem
 *---------------------------------------------------------------------------/
+SHADOW:
+0 1.6rem 3.2rem 0 rgba(0, 0, 0, 0.1);
+0 3.2rem 6.4rem 0 rgba(0, 0, 0, 0.07);
+0 0 2.4rem 0 rgba(0, 0, 0, 0.1);
 */
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+/* * we can set for all of elements with custom outline because when the users press tab keyword it will display the outline but by default and it look bad
+* so we need custom everry element with other outline when we are in focus state
+* of course we can also have another outline focus state like in input form... */
+*:focus {
+  outline: 0.3rem dotted #e67e22;
+  /* * to set the outline padding like padding with normal element */
+  /* outline-offset: 0.6rem; */
+  /* * we also use shadow to style it beautiful */
+  /* box-shadow: 0 0 0 0.9rem rgba(230, 125, 34, 0.5); */
 }
 
 html {
@@ -193,6 +208,8 @@ body {
   letter-spacing: 0.05rem;
 }
 
+/* * so now we need style the <button> not have link(href element) so we need fix it in here by add .btn selector */
+.btn,
 .btn:link,
 .btn:visited {
   text-decoration: none;
@@ -202,6 +219,10 @@ body {
   padding: 1.6rem 3.2rem;
   font-size: 2rem;
   font-weight: 600;
+
+  /* ! for .btn (<button> element) */
+  border: none;
+  cursor: pointer;
   /* margin-left: 24px; */
   /* box-shadow: 0 0 30px 0 rgba(0, 0, 0, 0.1); */
   /* *transition property: allows us to do just what it says so to transition between two values using animation
@@ -219,6 +240,18 @@ body {
    * usually we always use all keyword cuz it's shortcut and easy to look */
   transition: all 0.5s;
   /* transition: background-color 0.5s; */
+}
+
+.btn--form {
+  font-family: inherit;
+  background-color: #45260a;
+  color: #fae5d3;
+  align-self: end;
+  padding: 1.2rem;
+}
+.btn--form:hover {
+  background-color: #fae5d3;
+  color: #45260a;
 }
 
 /* .hero-btn--highlight { */

@@ -765,3 +765,123 @@
   font-size: 2rem;
   line-height: 1.6;
 }
+
+/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
+  **************** THE CTA SECTION *****************
+<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
+
+.section-cta {
+  padding: 9.6rem 0;
+}
+.cta {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 6.4rem;
+  /* align-items: end; */
+  /* background-color: #e67e22; */
+  /* ! notice when we manipulate with the dark color background and we want add the box-shadow to this background 
+  * so the color is darker => the box-shadow also darker otherwise it'll not work as things you want*/
+  box-shadow: 0 1.6rem 3.2rem 0 rgba(0, 0, 0, 0.15);
+  border-radius: 0.3rem;
+  /* ! now we want to set the background on left side is lighter than on the right side(darker)
+  * we want use light color #e67e22 on left and dark color #e67e22 for right  
+  * so we will use linear-gradient
+  * we don't have image here but now the gradient will treated as thought it was an image 
+  * default the direction from top to bottom but we also can change by use the first value of linear-gradient() 
+  ? use to keyword: to right,left, bottom, top
+    -> we can use corner: to right bottom, left top
+  ? use degree unit: 90deg, 180deg, 360deg...with degree we can edit many direction with degree(flexible)*/
+  background-image: linear-gradient(to right bottom, #eb984e, #e67e22);
+  overflow: hidden;
+}
+.cta-text-box {
+  padding: 4.8rem 0 6.4rem 6.4rem;
+}
+
+.cta-text {
+  font-size: 2rem;
+  line-height: 1.6;
+  color: #45260a;
+}
+
+.cta-header .heading-secondary {
+  color: #45260a;
+}
+.cta-form {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 3.2rem;
+  column-gap: 6.4rem;
+  /* justify-items: center; */
+}
+
+.cta-form label {
+  display: block;
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #fff;
+  margin-bottom: 1.2rem;
+}
+
+/* *When we manipulate with form element we should use descendent selector cuz if we add class in <input> <label> element which had few properties and if we add more it'll confused right */
+.cta-form input,
+.cta-form select {
+  display: block;
+  width: 100%;
+  font-size: 2rem;
+  padding: 0.8rem;
+  /* * to force the text in form element we can use inherit value which inherit the value from parent container(in this case it's body)
+  ! inherit keyword not only use for font-family it's also use for other property like color... */
+  font-family: inherit;
+  border-radius: 0.3rem;
+  outline: 0.3rem solid #fae5d3;
+  border: 0;
+  color: inherit;
+  background-color: #fae5d3;
+  /* * we can add some shadow in input element to do this looks good */
+  box-shadow: 0 0 3rem 0 rgba(0, 0, 0, 0.1);
+}
+
+/* * We can use pseudo placeholder element to style the placeholder text */
+.cta input::placeholder {
+  color: #868e96;
+}
+
+.cta-form input:focus {
+  /* outline: 0.3rem solid rgba(250, 229, 211, 0.5); */
+  /* border: 0.3rem solid #e67e22;
+  border-radius: 0.3rem; */
+  outline: 0;
+  box-shadow: 0 0 0 0.9rem rgba(250, 229, 211, 0.5);
+}
+
+.cta-form select:focus {
+  /* outline: 0.3rem solid #fff; */
+  outline: 0;
+  box-shadow: 0 0 0 0.9rem rgba(250, 229, 211, 0.5);
+}
+
+.cta-form option {
+  border: 0;
+}
+
+.cta-img-box {
+  /* ! notice that in this case to specify the image we need write link by use ../ and .. here represent for the parent folder(level up) and . represent the current file 
+  * so we use ../ to go to the parent folder right*/
+  background-image: linear-gradient(
+      to right bottom,
+      rgba(235, 151, 78, 0.3),
+      rgba(230, 125, 34, 0.3)
+    ),
+    url(../content/img/eating.jpg);
+  background-repeat: none;
+  /* * background-size: cover will do this image cover full image in background with any dimension */
+  background-size: cover;
+  /* * background-position will set the part of image display when the size is small
+  * in case we have the size image small and then the image will display the center part of this image */
+  background-position: center;
+}
+
+/* .cta-img{
+  width: 100%;
+} */
