@@ -1,0 +1,909 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/general.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Hero Section</title>
+  </head>
+  <body>
+    <!-- *Header 
+    ! we should always named classes selector for all elements but except in case this element don't have any child element so we can use descendant selector cuz named classes in this case not make sense
+    ! <header> element can be use for start the page, or for header of certain components, sections-->
+    <header class="header">
+      <!-- <div class="logo"> -->
+      <a href="#">
+        <img
+          class="logo"
+          src="content/img/omnifood-logo.png"
+          alt="Onifood logo"
+        />
+      </a>
+      <!-- </div> -->
+      <!-- !<nav> element is used for major navigation blocks that we have on our page so not all collections of links need to wrapped elements
+        * we should named for it: main-nav class cuz in some part of website like footer is also have nav element to navigation related parts right-->
+      <!-- <nav class="navigation"> -->
+      <nav class="main-nav">
+        <!-- * Usually we add a bunch of anchor element inside <nav> element but it's not best semantic way because navigation should be a list of links grouped together
+          * what we do here is create unordered list and inside that list we will add all the links: main-nav-list and it's many developers used -->
+        <ul class="main-nav-list">
+          <li><a class="main-nav-link" href="#">How it works</a></li>
+          <li><a class="main-nav-link" href="#">Meals</a></li>
+          <li><a class="main-nav-link" href="#">Testimonials</a></li>
+          <li><a class="main-nav-link" href="#">Pricing</a></li>
+          <!-- ! usually in navigation like this we usually have  a call to action as the very last item in the navigation
+          * something like call to action on hero section start eating well button remember that
+          * and two this call to action buttons will lead in the same places -->
+          <li>
+            <a class="main-nav-link nav-cta" href="#">Start eating well</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- * So let wrap these content inside <main> element: is HTML5 element which means basically that it contains the main content or main area of certain webpage so of a certain web document
+      * now what it does not include is content that is repeated across multiple pages like <header>, <footer>, sidebar, <aside> related info...
+      * so if we have multiple page we can use in the same header, footer, sidebar, aside... or other content which not change so these parts are not a part of the <main> element 
+      ! and we even might not styling <main> element, just for readers and search engine know that well this is exactly this is the main part of our page -->
+    <main>
+      <!-- ! We should named section class is: section-name because we have many section with the part of the page right, not like <article> which have more semantic usually block so we can do not specify name for it   
+      ! div: is no semantic box so we should always named classes if we want select them-->
+      <!-- <section class="hero"> 
+      * now we can choose this section-hero is container but if we do it we cant create fixed sized container like we want to
+       * Therefore we will create new container element -->
+      <section class="section-hero">
+        <!-- <div class="hero-description"> -->
+        <div class="hero">
+          <div class="hero-text-box">
+            <!-- <h1 class="hero-headline">
+          ! we should name this heading is heading-primary cuz it's <h1> element and then we can have classes secondary-heading<h2>, tertiary-heading<h3>
+          ! we should use classes selector not use id and element selector cuz it'll create the consistence for our CSS code -->
+            <h1 class="heading-primary">
+              A healthy meal delivered to your door, every single day
+            </h1>
+            <!-- <p class="hero-content"> -->
+            <p class="hero-description">
+              The smart 365-days-per-year food subscription that will make you
+              eat healthy again. Tailored to your personal tastes and
+              nutritional needs.
+            </p>
+            <!-- <button class="hero-btn">Start</button>
+        <button class="hero-btn hero-btn--highlight">Start</button> 
+      ! we should use anchor(link) element here cuz link element to link somewhere in current page, other page, outside website page
+      !while button is only use for actions, usually something happen not related to  navigation
+     * and the content in this a element is small text usually called MICRO COPY and we need to think about this small content when we design
+    * now this button here is main call to action button of this page, and it's basically the action which we want the user do  when go to website
+    * so in this case we want user subscribe to Onifood subscription right therefore we should write something related to that like: Subscribe now
+     ! but since the goal of company is also want the user eat the heathy food so we can write: Start eating well, because it's little bit rude if we call signup, subscribe now in the first time right-->
+            <!-- <a href="" class="hero-link"></a> 
+        ! we should named this link is btn it's basically a link but also fake button right, class btn because we have some button in website so we can reuse and if the button have special or some thing different we only add the second class(modified class) btn--highlight, btn--full(cuz it's full color, btn--cta(call to action))
+      * another button we can create the modified class and called btn-outline-->
+            <a class="btn btn--full margin-right-sm" href="#"
+              >Start eating well</a
+            >
+            <!-- * the second button is basically the secondary button and usually it's related to our info website like about us, read more, learn more... 
+          -->
+            <a class="btn btn--outline" href="#">Learn more &rarr;</a>
+            <div class="delivered-meals">
+              <div class="delivered-imgs">
+                <img
+                  class="customer-img"
+                  src="content/img/customers/customer-1.jpg"
+                  alt=""
+                />
+                <img
+                  class="customer-img"
+                  src="content/img/customers/customer-2.jpg"
+                  alt=""
+                />
+                <img
+                  class="customer-img"
+                  src="content/img/customers/customer-3.jpg"
+                  alt=""
+                />
+                <img
+                  class="customer-img"
+                  src="content/img/customers/customer-4.jpg"
+                  alt=""
+                />
+                <img
+                  class="customer-img"
+                  src="content/img/customers/customer-5.jpg"
+                  alt=""
+                />
+                <img
+                  class="customer-img"
+                  src="content/img/customers/customer-6.jpg"
+                  alt=""
+                />
+              </div>
+              <p class="delivered-text">
+                <span>250,000+</span> meals delivered last year!
+              </p>
+              <!-- <div class="customer-logos">
+              <img
+                class="customer-logo"
+                src="content/img/logos/business-insider.png"
+                alt=""
+              />
+              <img
+                class="customer-logo"
+                src="content/img/logos/forbes.png"
+                alt=""
+              />
+              <img
+                class="customer-logo"
+                src="content/img/logos/techcrunch.png"
+                alt=""
+              />
+              <img
+                class="customer-logo"
+                src="content/img/logos/usa-today.png"
+                alt=""
+              />
+              <img
+                class="customer-logo"
+                src="content/img/logos/the-new-york-times.png"
+                alt=""
+              />
+            </div> -->
+            </div>
+          </div>
+          <div class="hero-img-box">
+            <img class="hero-img" src="content/img/hero.png" alt="Hero image" />
+          </div>
+        </div>
+      </section>
+
+      <section class="section-featured-in">
+        <div class="container">
+          <!-- ! notice that in here we start section and this heading is main heading of this section so we can use <h2> for it
+          ! but in here we don't use heading-secondary class for it why? because we need the smaller text not too highlight
+          * the important here that's semantic not how it display on our page -->
+          <h2 class="featured-in-heading margin-bottom-sm">Featured In</h2>
+          <div class="featured-in-box flex flex--center-v">
+            <!-- <div class="featured-img-box"> -->
+            <img
+              class="featured-logo"
+              src="content/img/logos/business-insider.png"
+              alt="Business insider logo"
+            />
+            <!-- </div>
+            <div class="featured-img-box"> -->
+            <img
+              class="featured-logo"
+              src="content/img/logos/forbes.png"
+              alt="Forbes logo"
+            />
+            <!-- </div>
+            <div class="featured-img-box"> -->
+            <img
+              class="featured-logo"
+              src="content/img/logos/techcrunch.png"
+              alt="Techcrunch logo"
+            />
+            <!-- </div>
+            <div class="featured-img-box"> -->
+            <img
+              class="featured-logo"
+              src="content/img/logos/the-new-york-times.png"
+              alt="The new york times logo"
+            />
+            <!-- </div>
+            <div class="featured-img-box"> -->
+            <img
+              class="featured-logo"
+              src="content/img/logos/usa-today.png"
+              alt="Usa today logo"
+            />
+            <!-- </div> -->
+          </div>
+        </div>
+      </section>
+
+      <section class="section-how">
+        <div class="step-heading container">
+          <!-- !Notice that don't use h3 for heading of new section only use it for new part of section not for section 
+            * use h2 for heading of new section-->
+          <!-- <h2>How Onifood works</h2> -->
+          <span class="subheading">How Onifood works</span>
+          <h2 class="heading-secondary">
+            Your daily dose of health in 3 simple steps
+          </h2>
+        </div>
+
+        <div class="container grid grid--2-cols grid--center-v">
+          <!-- <div class="how-text-box"> -->
+          <div class="step-text-box">
+            <p class="step-number">01</p>
+            <!-- * now we can use h3 element to create heading start new part of section -->
+            <h3 class="heading-tertiary margin-bottom-sm">
+              Tell us what you like (and what not)
+            </h3>
+            <p class="step-description">
+              Never again waste time thinking about what to eat! Omnifood AI
+              will create a 100% personalized weekly meal plan just for you. It
+              makes sure you get all the nutrients and vitamins you need, no
+              matter what diet you follow!
+            </p>
+          </div>
+          <div class="step-img-box">
+            <img
+              class="step-img"
+              src="content/img/app/app-screen-1.png"
+              alt="Onifood homepage screen image"
+            />
+          </div>
+
+          <div class="step-img-box">
+            <img
+              class="step-img"
+              src="content/img/app/app-screen-2.png"
+              alt="Onifood detail dish screen image"
+            />
+          </div>
+          <div class="step-text-box">
+            <p class="step-number">02</p>
+            <h3 class="heading-tertiary margin-bottom-sm">
+              Approve your weekly meal plan
+            </h3>
+            <p class="step-description">
+              Once per week, approve the meal plan generated for you by Onifood
+              AI. You can change ingredients, swap entire meals, or even add
+              your own recipes.
+            </p>
+          </div>
+
+          <div class="step-text-box">
+            <p class="step-number">03</p>
+            <h3 class="heading-tertiary margin-bottom-sm">
+              Receive meals at convenient time
+            </h3>
+            <p class="step-description">
+              Best chefs in town will cook your selected meal every day, and we
+              will deliver it to your door whenever works best for you. You can
+              change delivery schedule and address daily!
+            </p>
+          </div>
+          <div class="step-img-box">
+            <img
+              class="step-img"
+              src="content/img/app/app-screen-3.png"
+              alt="Onifood deliver and payment screen image"
+            />
+          </div>
+        </div>
+      </section>
+
+      <section class="section-meals">
+        <div class="container margin-bottom-hg center-text">
+          <span class="subheading">Meals</span>
+          <h2 class="heading-secondary">
+            Onifood AI chooses from 5,000+ recipes
+          </h2>
+        </div>
+        <div class="container grid grid--3-cols margin-bottom-md">
+          <!-- * so we should use margin-bottom-md reuse class in this case because we don't want create new class cuz it'll populate our classes -->
+          <div class="meal-card">
+            <img
+              class="meal-img"
+              src="content/img/meals/meal-1.jpg"
+              alt="Japanese Gyozas image"
+            />
+            <div class="meal-details">
+              <div class="meal-details-tags">
+                <span class="tag tag-vegetarian">Vegetarian</span>
+              </div>
+              <!-- ! so in here we don't need to use h3 element cuz this is only paragraph and use p element is better -->
+              <!-- <h3 class="meal-details-heading">Meal 1: Japanese Gyozas</h3> -->
+              <p class="meal-details-title">Japanese Gyozas</p>
+              <ul class="meal-details-list flex flex--direct-col">
+                <li class="meal-details-item">
+                  <ion-icon
+                    class="meal-details-icon"
+                    name="pricetag-outline"
+                  ></ion-icon>
+                  <span>Category: Vegetarian</span>
+                </li>
+                <li class="meal-details-item">
+                  <ion-icon
+                    class="meal-details-icon"
+                    name="flame-outline"
+                  ></ion-icon>
+                  <span>Calories: <strong>550</strong></span>
+                </li>
+                <li class="meal-details-item flex">
+                  <ion-icon
+                    class="meal-details-icon"
+                    name="nutrition-outline"
+                  ></ion-icon>
+                  <span>NutriScore (Registered): <strong>68</strong></span>
+                </li>
+                <li class="meal-details-item">
+                  <ion-icon
+                    class="meal-details-icon"
+                    name="star-outline"
+                  ></ion-icon>
+                  <span>Average rating: <strong>4.8</strong> (400)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="meal-card">
+            <img
+              class="meal-img"
+              src="content/img/meals/meal-2.jpg"
+              alt="Avocado Salad image"
+            />
+            <div class="meal-details">
+              <div class="meal-details-tags flex">
+                <span class="tag tag--vegan">Vegan</span>
+                <span class="tag tag--paleo"> Paleo</span>
+              </div>
+              <p class="meal-details-title">Avocado Salad</p>
+              <ul class="meal-details-list flex flex--direct-col">
+                <li class="meal-details-item">
+                  <ion-icon
+                    class="meal-details-icon"
+                    name="pricetag-outline"
+                  ></ion-icon>
+                  <span>Category: Vegan and Paleo</span>
+                </li>
+                <li class="meal-details-item">
+                  <ion-icon
+                    class="meal-details-icon"
+                    name="flame-outline"
+                  ></ion-icon>
+                  <!-- ! we can use <strong> element to highlight the value like 650, 74 ... value of field and it's important and we want the user pay attention for it -->
+                  <span>Calories: <strong>650</strong></span>
+                </li>
+                <li class="meal-details-item">
+                  <ion-icon
+                    class="meal-details-icon"
+                    name="nutrition-outline"
+                  ></ion-icon>
+                  <span>NutriScore (Registered): <strong>74</strong></span>
+                </li>
+                <li class="meal-details-item">
+                  <ion-icon
+                    class="meal-details-icon"
+                    name="star-outline"
+                  ></ion-icon>
+                  <span>Average rating: <strong>4.9</strong> (600)</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="diets-box">
+            <h3 class="diets-title">Works with any diet:</h3>
+            <ul class="list flex flex--direct-col">
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Vegetarian</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Vegan</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Pescatarian</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Gluten-free</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Lactose-free</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Keto</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Paleo</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Low FODMAP</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon
+                ><span>Kid-friendly</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- * so bellow this section we can add the link to lead to other section like shop, card....
+            * because in this case the user watch the meal and diets list then they might want to see the link which link to subscribe, buy, watch other meals.... -->
+        <div class="container all-recipes">
+          <a class="link" href="#">See all recipes &rarr; </a>
+        </div>
+      </section>
+      <!-- ! in this case we shouldn't use reuse grid why? because we need not the same column
+      * so there we need to custom this grid for this section -->
+      <!-- <section class="section-testimonials grid grid--2-cols grid--gap-0"> -->
+      <section class="section-testimonials">
+        <div class="testimonials-container">
+          <div class="testimonials-heading">
+            <span class="subheading">Testimonials</span>
+            <h2 class="heading-secondary">Customer testimonials</h2>
+          </div>
+          <div class="testimonials grid grid--2-cols grid--gap-md">
+            <!-- ! so we can use the <figure> element for these testimonial cuz figure is use for represent some self-contained content and which sometime have caption and it perfect for things like diagrams, photos or code listings or really anything that can have a caption and that is self-contained
+            * and the testimonial we write here is also good to use <figure> element -->
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                src="content/img/customers/dave.jpg"
+                alt="The author's of this testimonial, Dave Bryson"
+              />
+              <!-- ! so now here about testimonial text we can use <blockquote> element, and blockquote represent for quote text like things that someone else said
+              ! and testimonial is exactly that, and it's also true with product reviews, quote of someone, context of an article or block post 
+              * and blockquote element is very perfect for this case right-->
+              <blockquote class="testimonial-text">
+                Inexpensive, healthy and great-tasting meals, without even
+                having to order manually! It feels truly magical
+              </blockquote>
+              <span class="testimonial-author">&mdash; Dave Bryson</span>
+            </figure>
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                src="content/img/customers/ben.jpg"
+                alt="The author's of this testimonial, Ben Hadley"
+              />
+              <blockquote class="testimonial-text">
+                The AI algorithm is crazy good, it chooses the right meals for
+                me every time. It's amazing not to worry about food anymore!
+              </blockquote>
+              <span class="testimonial-author">&mdash; Ben Hadley</span>
+            </figure>
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                src="content/img/customers/steve.jpg"
+                alt="The author's of this testimonial, Steve Miller"
+              />
+              <blockquote class="testimonial-text">
+                Omnifood is a life saver! I just started a company, so there's
+                no time for cooking. I couldn't live without my daily meals now!
+              </blockquote>
+              <span class="testimonial-author">&mdash; Steve Miller</span>
+            </figure>
+            <figure class="testimonial">
+              <img
+                class="testimonial-img"
+                src="content/img/customers/hannah.jpg"
+                alt="The author's of this testimonial, Hannah Smith"
+              />
+              <blockquote class="testimonial-text">
+                I got Omnifood for the whole family, and it frees up so much
+                time! Plus, everything is organic and vegan and without plastic.
+              </blockquote>
+              <span class="testimonial-author">&mdash; Hannah Smith</span>
+            </figure>
+          </div>
+        </div>
+        <div class="gallery grid grid--3-cols grid--gap-0">
+          <!-- ! we also use the figure element for here cuz it's gallery right
+            ! usually in blog post we have <figure> and with image and then we have caption we can use <figcaption> element to write caption
+            * so it quite common when we always use <figure> element to contain image, and then if have caption we can also write caption
+            * but now for this case we only want image and the reason we want container for it that because we will create some animation -->
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-1.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-2.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-3.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-4.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-5.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-6.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-7.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-8.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-9.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-10.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-11.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+          <figure class="gallery-item">
+            <img
+              class="gallery-img"
+              src="content/img/gallery/gallery-12.jpg"
+              alt="Gallery image"
+            />
+          </figure>
+        </div>
+      </section>
+
+      <section class="section-pricing">
+        <div class="container margin-bottom-hg">
+          <span class="subheading">Pricing</span>
+          <h2 class="heading-secondary">
+            Eating well without breaking the bank
+          </h2>
+        </div>
+        <div class="container grid grid--2-cols margin-bottom-md">
+          <div class="pricing-plan pricing-plan--starter">
+            <p class="plan-name">Start</p>
+            <!-- ! With plan price we have $ and number so we can style this $ notation and create a good visual style
+            * we can put the price and text separate and highlight the price -->
+            <p class="plan-price"><span>&dollar;</span>399</p>
+            <p class="plan-text">per month. That's just $13 per meal</p>
+            <ul
+              class="plan-details list flex flex--direct-col margin-bottom-md"
+            >
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>1 meal per day</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Order from 11am to 9pm</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Delivery is free</span>
+              </li>
+              <!-- ! so we have an issue in here that the button of both card is not align cuz start card we have 3 details but with complete card we have 4 details 
+              * so to fix it we can simply add more one detail to start card and add the close icon to create good style -->
+              <li class="list-item">
+                <ion-icon class="list-icon" name="close-outline"></ion-icon>
+                <span></span>
+              </li>
+            </ul>
+            <a class="btn btn--outline" href="#">Get Started</a>
+          </div>
+          <div class="pricing-plan pricing-plan--complete">
+            <span class="plan-name">Complete</span>
+            <p class="plan-price"><span>&dollar;</span>649</p>
+            <p class="plan-text">per month. That's just $11 per meals</p>
+            <ul
+              class="plan-details list flex flex--direct-col margin-bottom-md"
+            >
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span><strong>2</strong> meals per day</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Order <strong>24/7</strong></span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Delivery is free</span>
+              </li>
+              <li class="list-item">
+                <ion-icon class="list-icon" name="checkmark-outline"></ion-icon>
+                <span>Get access to latest recipes</span>
+              </li>
+            </ul>
+            <a class="btn btn--full" href="#">Get Started</a>
+          </div>
+        </div>
+
+        <div class="container center-text margin-bottom-hg">
+          <!-- ! we can use the <aside> in here, why? well usually we use the <aside> element for sidebar cuz the side related to many additional resources 
+          * but the <aside> also can use for the additional info even it's only have one content 
+          * in this case we want some additional info for the use to help user can truth and buy product -->
+          <aside class="plan-sub-info">
+            Prices include all applicable taxes. You can cancel at any time.
+            Both plans include the following:
+          </aside>
+        </div>
+
+        <div class="features">
+          <div class="container grid grid--4-cols">
+            <div class="feature">
+              <ion-icon
+                class="feature-icon feature-icon--cook"
+                name="infinite-outline"
+              ></ion-icon>
+              <span class="feature-title">Never cook again!</span>
+              <p class="feature-description">
+                Our subscriptions cover 365 days per year, even including major
+                holidays
+              </p>
+            </div>
+            <div class="feature">
+              <ion-icon
+                class="feature-icon feature-icon--local"
+                name="nutrition-outline"
+              ></ion-icon>
+              <span class="feature-title">Local and organic</span>
+              <p class="feature-description">
+                Our cooks only use local, fresh, and organic products to prepare
+                your meals.
+              </p>
+            </div>
+            <div class="feature">
+              <ion-icon
+                class="feature-icon feature-icon--time"
+                name="leaf-outline"
+              ></ion-icon>
+              <span class="feature-title">No waste</span>
+              <p class="feature-description">
+                All our partners only use reusable containers to package all
+                your meals.
+              </p>
+            </div>
+            <div class="feature">
+              <ion-icon
+                class="feature-icon feature-icon--pause"
+                name="pause-circle-outline"
+              ></ion-icon>
+              <span class="feature-title">Pause anytime</span>
+              <p class="feature-description">
+                Going on vacation? Just pause your subscription, and we refund
+                unused days.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section-cta">
+        <!-- <div class="container cta-container"> -->
+        <div class="container">
+          <div class="cta">
+            <div class="cta-text-box">
+              <div class="cta-header margin-bottom-md">
+                <!-- <span class="subheading">Call to action</span> -->
+                <h2 class="heading-secondary margin-bottom-sm">
+                  We offer a free sample meal
+                </h2>
+                <p class="cta-text">
+                  Healthy, tasty and hassle-free meals are waiting for you.
+                  Start eating well today. You can cancel or pause anytime. And
+                  the first meal is on us!
+                </p>
+              </div>
+              <!-- *The <form> element simply it's block and contain input element
+                * to send data with form we need to define the action property: action="value" value here is the place where we want send data to like link of file -->
+              <form class="cta-form" action="#">
+                <div class="form-item">
+                  <!-- * remember when we use the website from somewhere when we click to the label text it'll give us go to fill the input so how can we do that in our code?
+                  * we will use for property to link label and input, to link that we need give input ID(not class) and use this id is value of for property -->
+                  <label for="name">Name</label>
+                  <!-- * required is not have value property we only need to write required and do not something -->
+                  <input
+                    id="name"
+                    type="text"
+                    name="name"
+                    placeholder="John Smooth"
+                    required
+                  />
+                </div>
+                <!-- * usually we have <div> element to wrap this <label> and <input> to easy to style them and layout -->
+                <div class="form-item">
+                  <label for="email">Email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    name="email"
+                    placeholder="johnsmooth@gmail.com"
+                    required
+                  />
+                </div>
+                <div class="form-item">
+                  <label for="address">Address</label>
+                  <input
+                    id="address"
+                    type="text"
+                    name="address"
+                    placeholder="US"
+                    required
+                  />
+                </div>
+                <!--
+                  * We have many type of input can useful in some certain situation
+                  <input type="checkbox" />
+                <input type="number" /> -->
+                <div class="form-item">
+                  <label for="select-where">You know Onifood by</label>
+                  <select name="select-where" id="select-where" required>
+                    <!-- * with <input> element the value we write to input send to backend if we submit but with <select> <option> element we need define the value property if we send value when we submit
+                    * the first one usually is empty value and guide users-->
+                    <option value="">Please choose one option:</option>
+                    <option value="ads">Ads</option>
+                    <option value="social">Social network</option>
+                    <option value="friends">Friends or family</option>
+                    <option value="youtube">Youtube</option>
+                    <option value="other" disabled>From other</option>
+                  </select>
+                </div>
+
+                <!-- ! notice that we don't use type="button" in this case because the button in form is special and if we set type button for it it'll back the normal button and not effect to this form -->
+                <button class="btn btn--form">Sign up now</button>
+              </form>
+            </div>
+            <!-- * so now this element here not clear cuz it doesn't have any content, so we want the reader knows this is image element and write some description for reader can understand so how can we do that
+          * well we will use the role and aria-label properties
+          * role is define the element, aria-label is define the description for this element-->
+            <div
+              class="cta-img-box"
+              role="img"
+              aria-label="Woman is enjoy when she's having meal"
+            >
+              <!-- ! so we don't add the image here instead we will use background image cuz it's easy for us do some things creative like add some color over on background-img -->
+              <!-- <img
+              class="cta-img"
+              src="content/img/eating.jpg"
+              alt="The customer is having meal image"
+            /> -->
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- <hr /> -->
+    <footer class="footer">
+      <div class="container grid grid--footer">
+        <div class="logos-col">
+          <!-- <h3 class="heading-tertiary margin-bottom-sm">Logo</h3> -->
+          <a href="#">
+            <img
+              class="logo margin-bottom-md"
+              src="content/img/omnifood-logo.png"
+              alt="Onifood logo"
+            />
+          </a>
+          <ul class="social-links flex flex--gap-sm margin-bottom-sm">
+            <li>
+              <a href="#" class="footer-link"
+                ><ion-icon class="social-icon" name="logo-facebook"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="footer-link"
+                ><ion-icon class="social-icon" name="logo-instagram"></ion-icon
+              ></a>
+            </li>
+            <li>
+              <a href="#" class="footer-link"
+                ><ion-icon class="social-icon" name="logo-twitter"></ion-icon
+              ></a>
+            </li>
+          </ul>
+          <p class="copyright">Copyright &copy; by longhoang in 2023</p>
+        </div>
+
+        <div class="address-col">
+          <p class="footer-heading">Contact us</p>
+          <address class="contacts">
+            <p class="contact-item">
+              623 Harrison St., 2nd Floor, San Francisco, CA 94107
+            </p>
+            <!-- *We can use special link href for the phone number(tel:phoneNumber), email(mailto:email)
+            * it'll open your app when you click to this link with phone it'll open your phone number app
+            * with mail it'll open your email app 
+            ! so it might good in some situation -->
+            <p class="contact-item">
+              <a class="footer-link" href="tel:415-201-6370">415-201-6370</a>
+            </p>
+            <p class="contact-item">
+              <a class="footer-link" href="mailto:hello@omnifood.com"
+                >hello@omnifood.com</a
+              >
+            </p>
+            <!-- <p class="contact-item">Instagram, facebook, twitter</p> -->
+          </address>
+        </div>
+        <!-- * we need to use <nav> element here cuz all the links in here always link to a part of the website so it's also navigation but in footer right -->
+        <nav class="nav-col">
+          <p class="footer-heading">Onifood</p>
+          <ul class="footer-nav">
+            <li>
+              <a class="footer-link" href="#">Create account</a>
+            </li>
+            <li><a class="footer-link" href="#">Sign in</a></li>
+            <li><a class="footer-link" href="#">iOS app</a></li>
+            <li>
+              <a class="footer-link" href="#">Android app</a>
+            </li>
+          </ul>
+        </nav>
+        <nav class="nav-col">
+          <p class="footer-heading">Company</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">About Onifood</a></li>
+            <li><a class="footer-link" href="#">For Business</a></li>
+            <li><a class="footer-link" href="#">Cooking partners</a></li>
+            <li><a class="footer-link" href="#">Careers</a></li>
+          </ul>
+        </nav>
+        <nav class="nav-col">
+          <p class="footer-heading">Policy</p>
+          <ul class="footer-nav">
+            <li><a class="footer-link" href="#">Recipe directory</a></li>
+            <li><a class="footer-link" href="#">Help center</a></li>
+            <li><a class="footer-link" href="#">Privacy & terms</a></li>
+          </ul>
+        </nav>
+        <!-- <div class="copyright">
+          <p>Copyright &copy; by longhoang</p>
+        </div> -->
+      </div>
+    </footer>
+
+    <!-- *ICON PACKAGE: ION ICONS PACKAGE -->
+    <script
+      type="module"
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"
+    ></script>
+    <script
+      nomodule
+      src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"
+    ></script>
+  </body>
+</html>
