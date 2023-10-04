@@ -87,47 +87,34 @@
 /* .hero{} */
 .section-hero {
   background-color: #fae5d3;
-  /* * we also want some big space between top and bottom cuz remember that the image is fulfill the hero container and this space is also space between section
-  * we want space inside so we use padding
-  ! if we use margin we will create space outside hero section create whitespace */
   padding: 4.8rem 0 9.6rem 0;
 }
 
+/* *Media query basic */
+@media (max-width: 1200px) {
+  /* * in this media query we can write CSS code like we write in css file */
+  .section-hero {
+    background-color: red;
+  }
+}
+@media (max-width: 600px) {
+  /* * so now both the media query CSS style code will apply */
+  .section-hero {
+    border: 30px dotted #2f9e44;
+    /* ? but what happen if we have two property in the same in this case, and it'll create the conflict between CSS code right
+    * so in this case it's same priority so the code after will apply */
+    background-color: #b2f2bb;
+  }
+}
+
 .hero {
-  /* * Now we can add some padding to do the content have space when the viewport is smaller */
   padding: 0 4.8rem;
-
-  /* * remember in startup we also have some section have grey background color but because this website is combine between startup and calm personality so we can add the very light background color, very light of the primary color */
-  /* background-color: #fae5d3;
-  ! but we want this background-color entire section hero not only hero, if we do it it look strange because only hero container is color
-  * this is also another reason why we should create hero container in hero section  */
-
-  /* display: flex; */
-  /* ? now we want the text-box and image is side by side 
-  *so we can use flexbox and CSS grid 
-  !but we should use CSS grid to easy to edit the columns and we can use the same tool(CSS grid) for layout so it's create consistent */
   display: grid;
   grid-template-columns: 1fr 1fr;
-  /* column-gap: 64px; */
-  /* * we also need space between element in hero so we also use 9.6em to create consistent */
   gap: 9.6em;
   align-items: center;
   margin-top: 60px;
-
-  /* !SO NOW THE REASON WE CREATE NEW CONTAINER HERO IS CREATE FIXED WIDTH container */
-  /* width: 900px; */
-  /* * but remember that we should use rem unit instead use pixel unit, and it's also the ingredient in responsive web design right
-  * but before that we should custom this rem unit */
-  /* width: 120rem; */
-  /* ! again remember that if we use width property when the we pull and smaller the tab size and it's smaller than  so the width property will not change right, but what we want here the width of this element must to adapt the viewport smaller
-  * so therefore we will use: max-width property  */
-  max-width: 130rem;
-  margin: 0 auto;
-  /* background-color: #e67e22; */
-  /* margin-bottom: 4.8rem; */
 }
-/* .hero-description {
-} */
 
 .hero-text-box {
 }
