@@ -74,4 +74,97 @@
   .main-nav-list {
     gap: 3.2rem;
   }
+  .section-meals .grid {
+    grid-template-columns: 1.2fr 1.2fr 1fr;
+  }
+
+  .meal-details {
+    padding: 3.2rem 4.8rem 3.2rem 6.4rem;
+  }
+  .meal-details-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* * now we will responding to tablet devices
+! notice that: the range between breakpoint maybe 200 to 300px so we shouldn't do many media queries like per breakpoint 50px like 1200 1250 1300 not because it too much
+* always do with 200 to 300px because usually in this range the website will work right if we set media with logical way 
+
+! and so breakpoint we define here is 944px: 59em(tablet)
+* now in this tablet responsive design we can give hero section to one column and center all content then after that is image */
+
+@media (max-width: 59em) {
+  html {
+    /* * let change the font-size to 8px: 8/16px = 50% */
+    font-size: 50%;
+  }
+
+  .hero {
+    /* * the layout here is easy to change, and that's power of CSS Grid and it make easier to design layout responsive */
+    grid-template-columns: 1fr;
+    text-align: center;
+    /* * we need add padding here because the text is too wide */
+    padding: 0 8rem;
+    gap: 6.4rem;
+  }
+  .delivered-meals {
+    justify-content: center;
+    margin-top: 3.2rem;
+  }
+  .hero-description {
+    /* * because this content here to wide so we need to custom this with this breakpoint */
+    width: 80%;
+    margin: 0 auto 4.8rem;
+  }
+  .hero-img {
+    width: 60%;
+  }
+
+  /* * we also need to change the logo here because it's too big with this breakpoint layout */
+  .featured-logo {
+    height: 2.8rem;
+  }
+
+  .step-number {
+    font-size: 8.6rem;
+  }
+  .section-meals .grid {
+    gap: 6.4rem 3.2rem;
+    grid-template-columns: 1.3fr 1.3fr 1fr;
+  }
+  .meal-details-title {
+    font-size: 2.4rem;
+  }
+  .meal-details-list {
+    font-size: 2rem;
+  }
+  .meal-details {
+    padding: 3.2rem 2.4rem 3.2rem 4.8rem;
+  }
+
+  .section-testimonials {
+    grid-template-columns: 1fr;
+  }
+  .testimonials {
+    column-gap: 4.8rem;
+  }
+  /* ! we can see the power from CSS Grid it helps us do it easier */
+  .gallery {
+    grid-template-columns: repeat(6, 1fr);
+  }
+
+  .cta {
+    grid-template-columns: 1.2fr 1fr;
+    gap: 4.8rem;
+  }
+
+  .cta-header .heading-secondary {
+    font-size: 3rem;
+  }
+  .cta-text {
+    font-size: 1.6rem;
+  }
+  .cta-form {
+    grid-template-columns: 1fr;
+  }
 }

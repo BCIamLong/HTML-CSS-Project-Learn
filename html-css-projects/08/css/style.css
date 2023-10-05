@@ -423,7 +423,7 @@
   * that we will use overflow property and set to hidden */
 }
 .meal-details {
-  padding: 3.2rem;
+  padding: 3.2rem 4.8rem 3.2rem 6rem;
 }
 
 .meal-details-tags {
@@ -445,7 +445,7 @@
 }
 
 .meal-details-title {
-  font-size: 2rem;
+  font-size: 2.4rem;
   margin-bottom: 2.4rem;
   color: #343a40;
   font-weight: 600;
@@ -458,7 +458,7 @@
   gap: 1.6rem; */
   gap: 1.6rem;
   list-style: none;
-  font-size: 1.6rem;
+  font-size: 1.8rem;
   line-height: 1.6;
 }
 .meal-details-item {
@@ -521,6 +521,8 @@
 }
 
 .testimonial {
+  display: flex;
+  flex-direction: column;
 }
 
 .testimonial-img {
@@ -536,6 +538,8 @@
   margin-bottom: 2.4rem;
 }
 .testimonial-author {
+  display: inline-block;
+  margin-top: auto;
   font-size: 1.4rem;
   /* font-weight: 500; */
   color: #495057;
@@ -800,7 +804,7 @@
 .cta-form select {
   display: block;
   width: 100%;
-  font-size: 2rem;
+  font-size: 1.6rem;
   padding: 0.8rem;
   /* * to force the text in form element we can use inherit value which inherit the value from parent container(in this case it's body)
   ! inherit keyword not only use for font-family it's also use for other property like color... */
