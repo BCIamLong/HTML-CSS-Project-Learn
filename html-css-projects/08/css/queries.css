@@ -1,0 +1,33 @@
+/* *WE WILL WRITE THE MEDIA QUERIES IN THIS FILE */
+
+/* 
+  * to write media queries
+  * First we need to define breakpoints which basically the width we want to set for media queries so to do that we need to check the website with many different size and define where is breakpoint
+! one rem and em do NOT depend on html font-size in media queries, Instead 1rem = 1em = 16px(which is by default browser)
+? the different between em and rem
+* rem is the root font size
+* em is the current font size
+? so why we also need to use em? 
+* because rem unit has some bugs in some browsers when used in media queries and therefore we should not use rem unit in media queries but em unit
+* em is work exactly in the same like rem unit
+  */
+
+/* * so now we want set the first breakpoint is 1366px but we need to use em unit right so we will divide 16px
+* 1366px/16px = 85.375 but we will use the round number: 85em => 85em = 1360px */
+
+/* !FIRST BREAKPOINT: 1360px(85em) */
+@media (max-width: 85em) {
+  /* * now here we want decease the size of hero section to 1200px like the container we set for all section to create better look */
+  .hero {
+    /* * rem unit in here still use normal but we don't use it for media queries ok only use em */
+    max-width: 120rem;
+  }
+
+  .heading-primary {
+    font-size: 4.4rem;
+  }
+
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

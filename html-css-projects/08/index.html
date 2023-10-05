@@ -2,6 +2,12 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- !so before we write media query we need to ensure in our HTML file have this line code bellow 
+    * so it looks not crucial but with responsive web design it is absolutely crucial
+    ! and without this line code bellow the responsive web design will not work on physical mobile devices so not on phone and not on tablet
+    * and the reason for that is that browsers on mobile devices will basically zoom the page out by default until it fits the screen and so that's not what we want with media queries
+    * we simply want to make our entire layout so our entire design smaller so less wide and so therefore we need this line of code here  which will make it so that the page will actually match the screen width so the width will be equal to the  device width and the scale initially should be 100% so 1
+    * so it's mean the page will do not zoom out of the page to fit it on the screenS-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -11,6 +17,9 @@
     />
     <link rel="stylesheet" href="css/general.css" />
     <link rel="stylesheet" href="css/style.css" />
+    <!-- * When we includes the media queries css file we need put it in the last one of css files
+    * so we only build when have all CSS of website right so therefore we must to put it in the last one  -->
+    <link rel="stylesheet" href="css/queries.css" />
     <title>Hero Section</title>
   </head>
   <body>
