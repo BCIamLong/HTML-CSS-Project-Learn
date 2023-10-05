@@ -21,6 +21,7 @@
   .hero {
     /* * rem unit in here still use normal but we don't use it for media queries ok only use em */
     max-width: 120rem;
+    margin: 0 auto;
   }
 
   .heading-primary {
@@ -29,5 +30,48 @@
 
   .gallery {
     grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* * so now we can see when we decrease the width to 1200px now so many element like text image in many section still big, it's not break our layout but it's not good to look and present 
+* therefore we also need the media for this breakpoint 1200px: 75em*/
+
+/* ! now in fact everything we're doing here only works because we already have the other three responsive web design ingredients already in place
+* so we already have a fluid grid and responsive images(flexible image) and responsive unit, otherwise none of this would work at all */
+
+/* !BELLOW 1200px: 75em LANDSCAPE TABLET */
+@media (max-width: 75em) {
+  /* * because we need to edit many elements like text, image, space down so it looks like general reset right 
+ * therefore we can use the responsive unit which we set when we start code CSS files, that's rem unit 
+ * everything length we did in every element is rem unit and rem unit we can set it in <html> element right 
+ * therefore we can do it by edit the size of rem unit in <html>  */
+  html {
+    /* * so if we change the font-size <=> we change 1rem = the value here
+    * so every single element will change
+    * and this is big trick using technique
+    * we only define 1 rem = how much to suite with our layout right, so it's very great we only do it in one step
+    * so now we will try 9px => 9px/16px = 56.25% */
+    font-size: 56.25%;
+  }
+  /* ! the change from the trick above very cool and it's solve a lot issues break layout in this range breakpoint but not at all
+  ! some element is still big and look not good therefore we will change it to small by write code here but not too much */
+  .heading-secondary {
+    font-size: 3.6rem;
+  }
+  .heading-tertiary {
+    font-size: 3rem;
+  }
+  .grid {
+    /* column-gap: 4.8rem;
+    row-gap: 8rem; */
+    gap: 6.4rem 4.8rem;
+  }
+
+  .hero {
+    gap: 4.8rem;
+  }
+
+  .main-nav-list {
+    gap: 3.2rem;
   }
 }
