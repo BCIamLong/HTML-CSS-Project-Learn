@@ -98,7 +98,9 @@
     /* * let change the font-size to 8px: 8/16px = 50% */
     font-size: 50%;
   }
-
+  .grid {
+    column-gap: 3.2rem;
+  }
   .hero {
     /* * the layout here is easy to change, and that's power of CSS Grid and it make easier to design layout responsive */
     grid-template-columns: 1fr;
@@ -251,5 +253,57 @@
 
   .nav-open .mobile-nav-icon[name="menu-outline"] {
     display: none;
+  }
+  /* .logos-col .logo {
+    height: 2.2rem;
+  } */
+
+  .grid--footer {
+    grid-template-columns: 1.1fr 1.3fr 1.2fr;
+    justify-content: end;
+    column-gap: 8rem;
+  }
+
+  .logos-col {
+    grid-row: 1/-3;
+  }
+  .pricing-plan--complete::before {
+    top: 4.5%;
+    right: -14%;
+    padding: 1.2rem 4.8rem;
+  }
+}
+
+/* * Media for tablet small breakpoint 
+* 45em = 720px
+*BELLOW 45em: 720px*/
+
+@media (max-width: 45em) {
+  .section-meals .grid {
+    grid-template-columns: repeat(2, 1fr);
+    text-align: center;
+  }
+  .diets-box {
+    grid-column: 1/-1;
+    justify-self: stretch;
+  }
+
+  .diets-box .list {
+    display: grid;
+    justify-content: center;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 0 2.4rem 0 3.6rem;
+    width: 85%;
+    margin: 0 auto;
+  }
+
+  .grid--4-cols {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pricing-plan {
+    width: 100%;
+  }
+  .plan-details {
+    padding: 0 6.4rem;
   }
 }
