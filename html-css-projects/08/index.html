@@ -55,6 +55,10 @@
           </li>
         </ul>
       </nav>
+      <button class="mobile-nav-btn">
+        <ion-icon class="mobile-nav-icon" name="menu-outline"></ion-icon>
+        <ion-icon class="mobile-nav-icon" name="close-outline"></ion-icon>
+      </button>
     </header>
     <!-- * So let wrap these content inside <main> element: is HTML5 element which means basically that it contains the main content or main area of certain webpage so of a certain web document
       * now what it does not include is content that is repeated across multiple pages like <header>, <footer>, sidebar, <aside> related info...
@@ -905,6 +909,23 @@
       </div>
     </footer>
 
+    <script>
+      const closeBtn = document.querySelector(
+        '.mobile-nav-icon[name="close-outline"]'
+      );
+      const menuBtn = document.querySelector(
+        '.mobile-nav-icon[name="menu-outline"]'
+      );
+      const header = document.querySelector(".header");
+
+      menuBtn.addEventListener("click", function (e) {
+        header.classList.add("nav-open");
+      });
+
+      closeBtn.addEventListener("click", function (e) {
+        header.classList.remove("nav-open");
+      });
+    </script>
     <!-- *ICON PACKAGE: ION ICONS PACKAGE -->
     <script
       type="module"

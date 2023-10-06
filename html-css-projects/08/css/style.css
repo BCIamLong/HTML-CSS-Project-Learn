@@ -80,6 +80,27 @@
   background-color: #cf711f;
 }
 
+/* *MOBILE NAV BUTTON */
+.mobile-nav-btn {
+  display: none;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.3rem;
+}
+
+.mobile-nav-icon {
+  width: 4.8rem;
+  height: 4.8rem;
+  color: #212529;
+}
+
+/* * now to select one icon in these icons here we can use special selector [property="value"]*/
+.mobile-nav-icon[name="close-outline"] {
+  display: none;
+}
+
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
   **************** HERO SECTION*****************
   *Usually we have hero section with special because it’s hero section which very close with the top page and contain important content we want user pay attention for it right 

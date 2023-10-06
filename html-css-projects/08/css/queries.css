@@ -167,4 +167,89 @@
   .cta-form {
     grid-template-columns: 1fr;
   }
+  .main-nav {
+    /* display: none; */
+  }
+  .mobile-nav-btn {
+    display: flex;
+    align-items: center;
+  }
+  .mobile-nav-icon {
+  }
+
+  .header {
+    position: relative;
+  }
+
+  /* * When we open the menu we can display the popup contain nav links so how we can do that?
+  * well we will use absolute position to take this nav out of flow and style it with good style popup 
+  * then hide it and when we click we display it */
+  .main-nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* * now we want this element here is absolute based on viewport so therefore we don't need the relative parent container */
+    position: absolute;
+    right: 0;
+    top: 0;
+    border-radius: 0.3rem;
+    /* * so we want it has width 100% and height 100vh to fulfill the current tab */
+    width: 100%;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.96);
+
+    /* * now we do not display it right, we only display it when we click to this menu icon
+    ! but we need to notice that when we use display none we can't manipulate with animation like transition property... therefore it's annoying right and it's not create good look  */
+    /* display: none; */
+    /* * therefore we will go to the next solution when we use opacity */
+    opacity: 0;
+    /* ! but it's not exactly hide, so we need some more manipulate to do that 
+    ? we will do couple steps like bellow here:*/
+    /* *1, Hide it visually */
+    opacity: 0;
+    /* *2 Make it unaccessible to mouse and the keyboard cuz otherwise if we do not this then if we hit the tab key it's also go to the link which is we use opacity to hide because that element is still on the page, opacity only do it in visible not remove it out flow and to prevent this issue we will use*/
+    pointer-events: none;
+    /* *3 hide it from screen reader, so basically telling screen reader that this element is really hidden so to do that we will use: */
+    visibility: hidden;
+    /*! and it's correct way to hidden element without using display: none  */
+
+    /** we will add the nice effect that's when we click to menu icon the popup will move from the right side to the center page and it's really cool effect  */
+    transform: translateX(50%);
+
+    /* * Remember in transition property we can have three values, and the three value is type of transition
+    * by default it's linear transition and of course we can change that
+    * like: transition ease, ease-out, step-end... 
+    * ease-out: the beginning time is faster the end time(start faster and move slow in the end)
+    *ease-in: the beginning time is slower the end time(start slow and move faster in the end)
+    *ease-in-out: start fast and slow in middle and start fast in the end*/
+    transition: all 0.5s ease-in;
+  }
+
+  .main-nav-list {
+    flex-direction: column;
+    gap: 4.8rem;
+    align-items: center;
+  }
+
+  .main-nav-link:link,
+  .main-nav-link:visited {
+    font-size: 2.4rem;
+  }
+  /*
+  ! We should add css code when we manipulate with this screen(breakpoint) in here not in style.css cuz it belongs this breakpoint right
+  *HANDLER WHEN CLICK MENU NAV ICON */
+  .nav-open .main-nav {
+    opacity: 1;
+    pointer-events: auto;
+    visibility: visible;
+    transform: translateX(0%);
+  }
+
+  .nav-open .mobile-nav-icon[name="close-outline"] {
+    display: block;
+  }
+
+  .nav-open .mobile-nav-icon[name="menu-outline"] {
+    display: none;
+  }
 }

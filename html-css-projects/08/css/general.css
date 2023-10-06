@@ -55,17 +55,20 @@ SHADOW:
 html {
   /* * Format rem unit: 62.5% = 10px/16px (16px is default and we want 1 rem = 10px to easy to calc) */
   font-size: 62.5%;
+
+  /** we also need to set this <html> to overflow-x: hidden * */
+  overflow-x: hidden;
 }
 
 body {
   line-height: 1;
   font-weight: 400;
-  /* * now we need to choose the typeface: inter is perfect for startup but now we also want mix with calm personality so we need the quite round typeface
-  * so in this case we do not choose inter 
-  ! with the typeface we need experiment many time till end project we also test typeface tp watch the change of layout and choose the best fit typeface*/
   /* font-family: "Inter", sans-serif; */
   font-family: "Rubik", sans-serif;
   color: #343a40;
+
+  /* ! in case we have absolute position in our code it's only word if the body is relative parent or the body is container of relative parent  */
+  overflow-x: hidden;
 }
 /* !We should divide the structure of our files: GENERAL COMPONENT, HEADER, SECTIONS, FOOTER.... */
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
