@@ -306,4 +306,111 @@
   .plan-details {
     padding: 0 6.4rem;
   }
+  .featured-logo {
+    height: 2.2rem;
+  }
+}
+
+/* * MEDIA QUERIES FOR PHONES
+* BELLOW 35em: 560px */
+@media (max-width: 35em) {
+  .grid {
+    row-gap: 4.8rem;
+  }
+  .grid--2-cols,
+  .grid--3-cols,
+  .grid--4-cols {
+    grid-template-columns: 1fr;
+  }
+
+  .container {
+    padding: 0 2.4rem;
+  }
+  /* .heading-primary {
+    font-size: 4.4rem;
+  } */
+  .header {
+    padding: 0 1.2rem;
+  }
+  .hero {
+    padding: 0 2.4rem;
+  }
+
+  .section-hero {
+    padding: 3.2rem 0 6.4rem 0;
+  }
+  .btn:link,
+  .btn:visited {
+    padding: 2.4rem 1.2rem;
+  }
+  .hero-img-box {
+    width: 80%;
+  }
+  .featured-logo {
+    height: 1.2rem;
+  }
+  .hero-text-box .margin-right-sm {
+    margin-right: 1.2rem;
+  }
+  .section-meals .grid {
+    grid-template-columns: 1fr;
+  }
+  .diets-box {
+    justify-self: center;
+  }
+  .diets-box .list {
+    grid-template-columns: 1fr;
+  }
+  .step-number {
+    /* text-align: center; */
+  }
+  .step-img-box:nth-child(2) {
+    grid-row: 1;
+  }
+  .step-img-box:nth-child(6) {
+    grid-row: 5;
+  }
+  .step-img-box {
+    transform: translateY(4%);
+    /* ! Transform: translate is simply the easiest way of moving elements around without effecting the rest of the element around it */
+  }
+
+  .gallery.grid.grid--3-cols {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .pricing-plan--complete::before {
+    top: 5.5%;
+    right: -11.5%;
+    padding: 1.2rem 6.4rem;
+  }
+
+  .cta {
+    grid-template-columns: 1fr;
+  }
+  .cta-text-box {
+    padding: 0 2.4rem 4.8rem;
+  }
+  .cta-img-box {
+    height: 40rem;
+    grid-row: 1;
+  }
+
+  .grid--footer {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 2.4rem;
+  }
+  .address-col {
+    grid-row: 2;
+    grid-column: span 3;
+  }
+
+  .logos-col {
+    grid-column: span 3;
+    grid-row: 2;
+  }
+
+  .nav-col {
+    grid-row: 1;
+    grid-column: span 2;
+  }
 }

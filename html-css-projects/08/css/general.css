@@ -305,7 +305,7 @@ body {
       ! with experience we will know when we should use helper classes and usually it related to margin which we want reuse in multiple places but we do not want to add to specific elements because then when we want to reuse them somewhere else it might create some conflict
       * and of course we don't use link and visited pseudo element here cuz we want use this to all element not only buttons*/
 
-  margin-right: 2.4rem !important;
+  margin-right: 2.4rem;
 }
 
 .margin-bottom-sm {
