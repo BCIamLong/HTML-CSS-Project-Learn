@@ -9,6 +9,24 @@
     * we simply want to make our entire layout so our entire design smaller so less wide and so therefore we need this line of code here  which will make it so that the page will actually match the screen width so the width will be equal to the  device width and the scale initially should be 100% so 1
     * so it's mean the page will do not zoom out of the page to fit it on the screenS-->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- * We will add meta description 
+    * so meta is metadata which essentially to describe other data
+    * and so this is official way to adding metadata to HTML -->
+    <meta
+      name="description"
+      content="Onifood is an AI-powered food subscription that will make you eat healthy again, 365 days per year. It depends on your tastes and your healthy."
+    />
+    <!-- * this metadata description will appear in search engine when user search something text like this metadata content -->
+
+    <!-- * to use favicon we also use link element to do it -->
+    <link rel="icon" href="content/img/favicon-small.png" />
+    <!-- * with icon we need to format the icon for mobile like android and IOS when users want a shortcut website on their home screen it'll will need the icon represent for this web
+    ! if we don't have that it'll get default icon on phone and it's not good right 
+    * 1: for IOS-->
+    <link rel="apple-touch-icon" href="content/img/favicon-180-ios.png" />
+    <!-- *2: for android -->
+    <link rel="manifest" href="manifest.webmanifest" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -20,7 +38,10 @@
     <!-- * When we includes the media queries css file we need put it in the last one of css files
     * so we only build when have all CSS of website right so therefore we must to put it in the last one  -->
     <link rel="stylesheet" href="css/queries.css" />
-    <title>Hero Section</title>
+    <!-- * We also add the meaning title like here  -->
+    <title>Onifood &ndash; Never cook again</title>
+
+    <script src="js/script.js" defer></script>
   </head>
   <body>
     <!-- *Header 
@@ -43,15 +64,18 @@
         <!-- * Usually we add a bunch of anchor element inside <nav> element but it's not best semantic way because navigation should be a list of links grouped together
           * what we do here is create unordered list and inside that list we will add all the links: main-nav-list and it's many developers used -->
         <ul class="main-nav-list">
-          <li><a class="main-nav-link" href="#">How it works</a></li>
-          <li><a class="main-nav-link" href="#">Meals</a></li>
-          <li><a class="main-nav-link" href="#">Testimonials</a></li>
-          <li><a class="main-nav-link" href="#">Pricing</a></li>
+          <!-- !With the link like #how, #meals it's page anchor cuz it's only move in this page -->
+          <li><a class="main-nav-link" href="#how">How it works</a></li>
+          <li><a class="main-nav-link" href="#meals">Meals</a></li>
+          <li>
+            <a class="main-nav-link" href="#testimonials">Testimonials</a>
+          </li>
+          <li><a class="main-nav-link" href="#pricing">Pricing</a></li>
           <!-- ! usually in navigation like this we usually have  a call to action as the very last item in the navigation
           * something like call to action on hero section start eating well button remember that
           * and two this call to action buttons will lead in the same places -->
           <li>
-            <a class="main-nav-link nav-cta" href="#">Start eating well</a>
+            <a class="main-nav-link nav-cta" href="#cta">Try for free</a>
           </li>
         </ul>
       </nav>
@@ -97,12 +121,12 @@
             <!-- <a href="" class="hero-link"></a> 
         ! we should named this link is btn it's basically a link but also fake button right, class btn because we have some button in website so we can reuse and if the button have special or some thing different we only add the second class(modified class) btn--highlight, btn--full(cuz it's full color, btn--cta(call to action))
       * another button we can create the modified class and called btn-outline-->
-            <a class="btn btn--full margin-right-sm" href="#"
+            <a class="btn btn--full margin-right-sm" href="#cta"
               >Start eating well</a
             >
             <!-- * the second button is basically the secondary button and usually it's related to our info website like about us, read more, learn more... 
           -->
-            <a class="btn btn--outline" href="#">Learn more &rarr;</a>
+            <a class="btn btn--outline" href="#how">Learn more &rarr;</a>
             <div class="delivered-meals">
               <div class="delivered-imgs">
                 <img
@@ -169,7 +193,23 @@
             </div>
           </div>
           <div class="hero-img-box">
-            <img class="hero-img" src="content/img/hero.png" alt="Hero image" />
+            <picture>
+              <source srcset="content/img/hero-resize.webp" type="image/webp" />
+              <source
+                srcset="content/img/hero-resize-min.png"
+                type="image/png"
+              />
+              <!-- * source element mean if the browser support webp it'll get webp image and if not it'll take the hero-resize-min.png which have small size but not high quality image
+              ! and remember that the users use old version browser is not popular so we can do it
+              * of course we need the <img> here to do by default right if we don't have image how can we display
+              * so why we default hero-size-min.png well it is for the browser not support, and if browser support browser will know which the image should display that mean the high quality image will display 
+              * and it's also a way we maintain images on website-->
+              <img
+                class="hero-img"
+                src="content/img/hero-resize-min.png"
+                alt="Hero image"
+              />
+            </picture>
           </div>
         </div>
       </section>
@@ -220,7 +260,7 @@
         </div>
       </section>
 
-      <section class="section-how">
+      <section class="section-how" id="how">
         <div class="step-heading container">
           <!-- !Notice that don't use h3 for heading of new section only use it for new part of section not for section 
             * use h2 for heading of new section-->
@@ -294,7 +334,7 @@
         </div>
       </section>
 
-      <section class="section-meals">
+      <section class="section-meals" id="meals">
         <div class="container margin-bottom-hg center-text">
           <span class="subheading">Meals</span>
           <h2 class="heading-secondary">
@@ -445,7 +485,7 @@
       <!-- ! in this case we shouldn't use reuse grid why? because we need not the same column
       * so there we need to custom this grid for this section -->
       <!-- <section class="section-testimonials grid grid--2-cols grid--gap-0"> -->
-      <section class="section-testimonials">
+      <section class="section-testimonials" id="testimonials">
         <div class="testimonials-container">
           <div class="testimonials-heading">
             <span class="subheading">Testimonials</span>
@@ -599,7 +639,7 @@
         </div>
       </section>
 
-      <section class="section-pricing">
+      <section class="section-pricing" id="pricing">
         <div class="container margin-bottom-hg">
           <span class="subheading">Pricing</span>
           <h2 class="heading-secondary">
@@ -725,7 +765,7 @@
         </div>
       </section>
 
-      <section class="section-cta">
+      <section class="section-cta" id="cta">
         <!-- <div class="container cta-container"> -->
         <div class="container">
           <div class="cta">
@@ -743,12 +783,15 @@
               </div>
               <!-- *The <form> element simply it's block and contain input element
                 * to send data with form we need to define the action property: action="value" value here is the place where we want send data to like link of file -->
-              <form class="cta-form" action="#">
+              <!-- <form class="cta-form" action="#"> 
+                *MAKE FORM WORK ON NETLIFY-->
+              <form class="cta-form" name="sign-up" netlify>
                 <div class="form-item">
                   <!-- * remember when we use the website from somewhere when we click to the label text it'll give us go to fill the input so how can we do that in our code?
                   * we will use for property to link label and input, to link that we need give input ID(not class) and use this id is value of for property -->
                   <label for="name">Name</label>
                   <!-- * required is not have value property we only need to write required and do not something -->
+                  <!-- * To make form work we need give name attribute for input element and it's also standard for form input -->
                   <input
                     id="name"
                     type="text"
@@ -797,7 +840,7 @@
                 </div>
 
                 <!-- ! notice that we don't use type="button" in this case because the button in form is special and if we set type button for it it'll back the normal button and not effect to this form -->
-                <button class="btn btn--form">Sign up now</button>
+                <button type="submit" class="btn btn--form">Sign up now</button>
               </form>
             </div>
             <!-- * so now this element here not clear cuz it doesn't have any content, so we want the reader knows this is image element and write some description for reader can understand so how can we do that
@@ -910,23 +953,6 @@
       </div>
     </footer>
 
-    <script>
-      const closeBtn = document.querySelector(
-        '.mobile-nav-icon[name="close-outline"]'
-      );
-      const menuBtn = document.querySelector(
-        '.mobile-nav-icon[name="menu-outline"]'
-      );
-      const header = document.querySelector(".header");
-
-      menuBtn.addEventListener("click", function (e) {
-        header.classList.add("nav-open");
-      });
-
-      closeBtn.addEventListener("click", function (e) {
-        header.classList.remove("nav-open");
-      });
-    </script>
     <!-- *ICON PACKAGE: ION ICONS PACKAGE -->
     <script
       type="module"

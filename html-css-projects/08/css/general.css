@@ -58,6 +58,11 @@ html {
 
   /** we also need to set this <html> to overflow-x: hidden * */
   overflow-x: hidden;
+
+  /* ! so with chrome and firebox browser we do not need to set JS code do the smooth animation we can do it with only CSS
+  ! notice that this scroll-behavior property need to put in the root element is html element
+  * but because our users customers might come from any browser so we need set up for all browsers therefore we need to use JS to setup this animation*/
+  /* scroll-behavior: smooth; */
 }
 
 body {
@@ -318,6 +323,10 @@ body {
 }
 
 .margin-bottom-hg {
+  margin-bottom: 9.6rem !important;
+}
+
+.margin-top-hg {
   margin-bottom: 9.6rem !important;
 }
 

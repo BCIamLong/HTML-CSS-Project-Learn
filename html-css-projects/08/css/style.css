@@ -39,6 +39,7 @@
   **************** NAVIGATION*****************
 <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<*/
 .main-nav {
+  backdrop-filter: blur(10px);
 }
 
 .main-nav-list {
@@ -100,6 +101,26 @@
 .mobile-nav-icon[name="close-outline"] {
   display: none;
 }
+
+/* *STICKY NAVIGATION */
+
+.sticky {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #fff;
+  z-index: 1000;
+  /* * we should have a fixed height */
+  height: 8rem;
+  box-shadow: 0 1.2rem 3.2rem 0 rgba(0, 0, 0, 0.03);
+  /* transition: all 0.5s; */
+}
+
+/* * To handle the problem for when we scroll section hero out viewport it'll create jump because it'll add the navigation sticky
+* we had two way to solve this
+* but the 3 way is: add sticky class to body, then use .sticky .header and add the value like the code above, then add .sticky .section-hero :{margin-top: 8rem} 
+* in js code we only add the class sticky to body and finished*/
 
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>> 
   **************** HERO SECTION*****************
